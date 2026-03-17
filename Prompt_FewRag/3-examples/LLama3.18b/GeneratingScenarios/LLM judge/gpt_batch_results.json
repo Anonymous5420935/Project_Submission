@@ -1,0 +1,52 @@
+[
+    {
+        "sample_id": 1,
+        "score": 1,
+        "reasoning": "The generated scenario is about migrating from version #0 to #31 and includes unrelated steps and tags. It does not match the expected scenario that checks the default migration is set to 0."
+    },
+    {
+        "sample_id": 2,
+        "score": 2,
+        "reasoning": "The generated text captures the main purpose (checking groups list) and most of the table data, but it omits the step \"When I request content and groups\" and the check for empty content, and adds minor formatting differences."
+    },
+    {
+        "sample_id": 3,
+        "score": 1,
+        "reasoning": "The generated scenario describes a downgrade from version #2 to #1 with completely different steps, missing all the table verification and migration steps present in the expected scenario."
+    },
+    {
+        "sample_id": 4,
+        "score": 2,
+        "reasoning": "The generated scenario shares the high\u2011level intent (checking clusters list) but lacks the background step that stores empty reports, does not list the expected clusters, and replaces the verification with a JSON schema check. Important parts of the expected scenario are missing."
+    },
+    {
+        "sample_id": 5,
+        "score": 1,
+        "reasoning": "The generated scenario describes a non\u2011empty list of organizations, whereas the expected scenario expects an empty list when the report table is empty. The content is unrelated."
+    },
+    {
+        "sample_id": 6,
+        "score": 1,
+        "reasoning": "The expected scenario checks the response for an empty list of clusters, while the generated one checks a non\u2011empty list with errors. The scenarios are fundamentally different."
+    },
+    {
+        "sample_id": 7,
+        "score": 1,
+        "reasoning": "The expected scenario verifies an empty list of disabled rules; the generated scenario deals with updating a rule and includes unrelated JSON schema checks. No alignment."
+    },
+    {
+        "sample_id": 8,
+        "score": 3,
+        "reasoning": "The generated text reproduces the expected scenario verbatim except for an extraneous trailing quote character. The core steps and wording match, so it is a good but not perfect match."
+    },
+    {
+        "sample_id": 9,
+        "score": 1,
+        "reasoning": "The generated scenario uses a different tag, different wording, and repeats unrelated error messages. It does not match the expected CLI scenario about a missing configuration file."
+    },
+    {
+        "sample_id": 10,
+        "score": 1,
+        "reasoning": "The generated scenario is about an HTTP endpoint for organizations, while the expected scenario is a detailed database cleanup flow. The content is unrelated."
+    }
+]

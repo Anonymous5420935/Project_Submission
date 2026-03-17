@@ -1,0 +1,52 @@
+[
+    {
+        "sample_id": 1,
+        "score": 2,
+        "reasoning": "The generated text keeps the tag and background but changes the feature title and omits the extensive list of migration checks, so it only partially matches the expected content."
+    },
+    {
+        "sample_id": 2,
+        "score": 2,
+        "reasoning": "The structure and background are similar, but the endpoint name and feature description differ (\"groups\" instead of \"content\"), and the expected single check is not accurately reproduced."
+    },
+    {
+        "sample_id": 3,
+        "score": 2,
+        "reasoning": "The tag and background are retained, yet the feature title is wrong and only one downgrade check is present instead of the full list, resulting in a partial match."
+    },
+    {
+        "sample_id": 4,
+        "score": 2,
+        "reasoning": "Background matches, but the feature title and the detailed cluster\u2011related scenario list are replaced by a generic REST\u2011API list, so the core intent is not fulfilled."
+    },
+    {
+        "sample_id": 5,
+        "score": 2,
+        "reasoning": "While the background is identical, the generated feature describes generic REST endpoints rather than the specific \"organizations\" checks required, leading to a partial correspondence."
+    },
+    {
+        "sample_id": 6,
+        "score": 2,
+        "reasoning": "The generated output again shows a generic REST\u2011API feature instead of the expected rule\u2011acknowledgement scenarios, matching only the background section."
+    },
+    {
+        "sample_id": 7,
+        "score": 2,
+        "reasoning": "Both texts are smoke\u2011test features, but the generated version refers to the mock service and lists different checks, missing several expected items such as jps, ZooKeeper, and Kafka checks."
+    },
+    {
+        "sample_id": 8,
+        "score": 1,
+        "reasoning": "The generated content is an unrelated description of Gherkin grammar, bearing no resemblance to the expected feature about service start\u2011up behavior."
+    },
+    {
+        "sample_id": 9,
+        "score": 1,
+        "reasoning": "No generated output is provided; the response is empty, which does not match the expected BDD scenario at all."
+    },
+    {
+        "sample_id": 10,
+        "score": 2,
+        "reasoning": "The tag and background are kept, but the feature title and scenario list are wrong; only a single unrelated check appears instead of the full set of old\u2011record display tests."
+    }
+]

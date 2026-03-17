@@ -1,0 +1,52 @@
+[
+    {
+        "sample_id": 1,
+        "score": 1,
+        "reasoning": "The generated text completely misses the database migration tests and only mentions a single check. The feature name and content are irrelevant to the expected output."
+    },
+    {
+        "sample_id": 2,
+        "score": 3,
+        "reasoning": "The generated text captures the primary intent of checking the 'groups' endpoint with the same background and check, but the feature name and file name differ slightly."
+    },
+    {
+        "sample_id": 3,
+        "score": 1,
+        "reasoning": "The generated text is irrelevant to the expected database migration downgrades. It only includes one downgrade check and misses the feature's core purpose."
+    },
+    {
+        "sample_id": 4,
+        "score": 2,
+        "reasoning": "The generated text shares the same background but lacks the specific cluster-related checks listed in the expected output. It covers general REST API endpoints instead."
+    },
+    {
+        "sample_id": 5,
+        "score": 2,
+        "reasoning": "The generated text includes general REST API checks but misses the specific organization list scenarios outlined in the expected output."
+    },
+    {
+        "sample_id": 6,
+        "score": 2,
+        "reasoning": "The generated text focuses on basic REST API endpoints and does not address the rule acking and disabled rules tests in the expected output."
+    },
+    {
+        "sample_id": 7,
+        "score": 3,
+        "reasoning": "The generated text captures the primary intent of smoke tests but omits specific checks like jps, ZooKeeper, and Kafka from the expected output."
+    },
+    {
+        "sample_id": 8,
+        "score": 1,
+        "reasoning": "The generated text is entirely unrelated to the expected startup behavior checks, instead providing a Gherkin syntax explanation."
+    },
+    {
+        "sample_id": 9,
+        "score": 2,
+        "reasoning": "The generated text addresses cleanup but focuses on a different component (notification-writer) and specific tables not mentioned in the expected output."
+    },
+    {
+        "sample_id": 10,
+        "score": 1,
+        "reasoning": "The generated text is irrelevant to the expected display of old records. It only includes a single check and misses the feature's core purpose."
+    }
+]

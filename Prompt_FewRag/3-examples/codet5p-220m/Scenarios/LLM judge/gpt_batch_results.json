@@ -1,0 +1,52 @@
+[
+    {
+        "sample_id": 1,
+        "score": 1,
+        "reasoning": "The generated text bears almost no resemblance to the expected scenario. It has a different title, omits the majority of steps (migration number check, table count, table list), and therefore fails to capture the intended behavior."
+    },
+    {
+        "sample_id": 2,
+        "score": 2,
+        "reasoning": "The generated scenario shares the overall structure and some steps, but it omits the \"retrieve empty content\" step, changes the request description, and the final table row is malformed. Significant information is missing or incorrect."
+    },
+    {
+        "sample_id": 3,
+        "score": 2,
+        "reasoning": "Identical issues as sample 2: missing the empty\u2011content verification and the table format is wrong, resulting in a partial but incomplete match."
+    },
+    {
+        "sample_id": 4,
+        "score": 1,
+        "reasoning": "The generated output describes a completely different endpoint and scenario (no auth token, JSON schema) and does not include any of the expected steps about empty reports, token usage, or termination."
+    },
+    {
+        "sample_id": 5,
+        "score": 1,
+        "reasoning": "The generated scenario focuses on a schema check for the organizations endpoint with proper auth, whereas the expected scenario checks for an empty list of organizations and includes termination steps. Content is unrelated."
+    },
+    {
+        "sample_id": 6,
+        "score": 1,
+        "reasoning": "The generated text is unrelated to the expected scenario about requesting results for a list of clusters; it instead describes a generic endpoint reachability check with a JSON schema."
+    },
+    {
+        "sample_id": 7,
+        "score": 1,
+        "reasoning": "The generated scenario concerns acked rules and a JSON schema, which does not match any of the expected steps about disabling, updating, and verifying a specific rule."
+    },
+    {
+        "sample_id": 8,
+        "score": 1,
+        "reasoning": "The expected scenario checks for the presence of an executable file, while the generated text is about rule hits after processing messages\u2014completely unrelated."
+    },
+    {
+        "sample_id": 9,
+        "score": 1,
+        "reasoning": "The expected CLI scenario about handling a broken database configuration is not reflected at all in the generated output, which repeats the unrelated rule\u2011hits scenario."
+    },
+    {
+        "sample_id": 10,
+        "score": 1,
+        "reasoning": "The generated content deals with migration info lookup, not with the detailed database cleanup steps, record insertion, and verification described in the expected scenario."
+    }
+]

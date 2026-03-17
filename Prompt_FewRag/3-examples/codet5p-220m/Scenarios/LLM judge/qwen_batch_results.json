@@ -1,0 +1,52 @@
+[
+    {
+        "sample_id": 1,
+        "score": 2,
+        "reasoning": "The generated scenario captures the initial steps (checking migration_info table exists) but misses critical elements: verifying migration #0, checking table count (1 table), and the second 'Then' clause about table names. Structural omissions make it partial."
+    },
+    {
+        "sample_id": 2,
+        "score": 3,
+        "reasoning": "The generated scenario matches the expected structure and most content, but changes 'request content and groups' to 'request list of groups' and omits the 'retrieve empty content' step. The table is mostly correct but the first row in the 'Security' group is missing the 'Title' column. Minor stylistic differences remain."
+    },
+    {
+        "sample_id": 3,
+        "score": 3,
+        "reasoning": "Identical to Sample 2 but without the @rest-api tag. The same issues apply: missing 'retrieve empty content' step and the 'Security' group table formatting error. Primary intent is preserved with minor omissions."
+    },
+    {
+        "sample_id": 4,
+        "score": 1,
+        "reasoning": "The generated scenario is completely unrelated to the expected. It checks a different endpoint (/organizations/999/clusters/.../reports) and includes an extensive schema check not present in the expected. No relevant steps or structure match."
+    },
+    {
+        "sample_id": 5,
+        "score": 2,
+        "reasoning": "The generated scenario checks the same endpoint but replaces the 'retrieve empty list of organizations' verification with a schema check. It also omits the 'terminate Insights Results Aggregator' step. Key functional validation is missing."
+    },
+    {
+        "sample_id": 6,
+        "score": 1,
+        "reasoning": "The generated scenario is entirely unrelated to the expected. It checks a different endpoint and includes a schema check for 'clusters' and 'errors' that don't align with the expected scenario's focus on empty reports and cluster validation. No relevant steps match."
+    },
+    {
+        "sample_id": 7,
+        "score": 1,
+        "reasoning": "The generated scenario is completely different from the expected. It checks 'acked_rules' endpoint with schema validation instead of testing rule updates. No steps related to disabling/updating rules or verification of justifications are present."
+    },
+    {
+        "sample_id": 8,
+        "score": 1,
+        "reasoning": "The generated scenario is irrelevant to the expected. It checks rule hits after consuming messages instead of verifying the existence of the 'insights-results-aggregator' executable. No structural or content overlap exists."
+    },
+    {
+        "sample_id": 9,
+        "score": 1,
+        "reasoning": "The generated scenario is entirely unrelated to the expected. It checks rule hits instead of testing broken database configuration. No steps about running the service with a wrong config or error message validation are present."
+    },
+    {
+        "sample_id": 10,
+        "score": 2,
+        "reasoning": "The generated scenario only checks the existence of the migration_info table. It misses all critical elements: inserting records, running the cleaner, verifying clusters, and deleting tables. Structural omissions make it partial."
+    }
+]

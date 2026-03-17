@@ -1,0 +1,52 @@
+[
+    {
+        "sample_id": 1,
+        "score": 1,
+        "reasoning": "Generated scenario is truncated, has wrong title and tags, and omits the majority of expected steps."
+    },
+    {
+        "sample_id": 2,
+        "score": 2,
+        "reasoning": "Core intent (checking groups list) is present, but the generated text misses the \"retrieve empty content\" step and uses different wording, making it incomplete."
+    },
+    {
+        "sample_id": 3,
+        "score": 1,
+        "reasoning": "Generated scenario references a different downgrade version and contains only two steps, far from the detailed expected scenario."
+    },
+    {
+        "sample_id": 4,
+        "score": 1,
+        "reasoning": "Generated scenario diverges to a different test (JSON schema, reports) and lacks the expected steps about empty cluster list and termination."
+    },
+    {
+        "sample_id": 5,
+        "score": 1,
+        "reasoning": "Generated scenario tests a completely different case (list with two organizations) and does not match the expected empty\u2011list scenario."
+    },
+    {
+        "sample_id": 6,
+        "score": 1,
+        "reasoning": "Generated scenario is about exporting from REPORT via REST calls, not the database export with limit on ADVISOR_RATINGS as expected."
+    },
+    {
+        "sample_id": 7,
+        "score": 1,
+        "reasoning": "Generated scenario is overly brief, missing all preparation, verification of empty tables, and record\u2011count checks required by the expected scenario."
+    },
+    {
+        "sample_id": 8,
+        "score": 1,
+        "reasoning": "Generated scenario only checks database and S3 connections and a single table lookup, omitting all steps about inserting data, running exporter, and verifying metadata."
+    },
+    {
+        "sample_id": 9,
+        "score": 1,
+        "reasoning": "Generated scenario targets a different rule and includes unrelated steps; it does not contain the expected metadata attributes or cluster list."
+    },
+    {
+        "sample_id": 10,
+        "score": 1,
+        "reasoning": "Generated scenario describes a different UI flow with many extra steps and missing the specific menu items, messages, and logout sequence from the expected scenario."
+    }
+]

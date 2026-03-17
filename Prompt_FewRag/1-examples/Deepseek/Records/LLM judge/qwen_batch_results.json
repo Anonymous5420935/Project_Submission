@@ -1,0 +1,52 @@
+[
+    {
+        "sample_id": 1,
+        "score": 1,
+        "reasoning": "The generated text is a task prompt instructing the user to translate a BDD scenario into 'Record text', but it does not provide the actual translated output. The expected output is a complete Gherkin feature file with scenarios, which is entirely missing in the generated text."
+    },
+    {
+        "sample_id": 2,
+        "score": 1,
+        "reasoning": "The generated text is a task setup for translating a BDD scenario into 'Record text', but it does not include the translated output. The expected output is a complete feature file with a background and scenario, which is not present in the generated text."
+    },
+    {
+        "sample_id": 3,
+        "score": 1,
+        "reasoning": "The generated text is a task prompt for translating a BDD scenario into 'Record text', but it does not provide the translated output. The expected output is a complete feature file with scenarios, which is entirely missing in the generated text."
+    },
+    {
+        "sample_id": 4,
+        "score": 1,
+        "reasoning": "The generated text is a task setup for translating a BDD scenario into 'Record text', but it does not include the translated output. The expected output is a complete feature file with a background and scenario, which is not present in the generated text."
+    },
+    {
+        "sample_id": 5,
+        "score": 1,
+        "reasoning": "The generated text is a task prompt for translating a BDD scenario into 'Record text', but it does not provide the translated output. The expected output is a complete feature file with scenarios, which is entirely missing in the generated text."
+    },
+    {
+        "sample_id": 6,
+        "score": 1,
+        "reasoning": "The generated text is a task setup for translating a BDD scenario into 'Record text', but it does not include the translated output. The expected output is a complete feature file with a background and scenario, which is not present in the generated text."
+    },
+    {
+        "sample_id": 7,
+        "score": 1,
+        "reasoning": "The generated text is a task prompt for translating a BDD scenario into 'Record text', but it does not provide the translated output. The expected output is a complete feature file with scenarios, which is entirely missing in the generated text."
+    },
+    {
+        "sample_id": 8,
+        "score": 1,
+        "reasoning": "The generated text is a task setup for translating a BDD scenario into 'Record text', but it does not include the translated output. The expected output is a complete feature file with scenarios, which is not present in the generated text."
+    },
+    {
+        "sample_id": 9,
+        "score": 1,
+        "reasoning": "The generated text is a task prompt for translating a BDD scenario into 'Record text', but it does not provide the translated output. The expected output is a complete feature file with scenarios, which is entirely missing in the generated text."
+    },
+    {
+        "sample_id": 10,
+        "score": 1,
+        "reasoning": "The generated text is a task setup for translating a BDD scenario into 'Record text', but it does not include the translated output. The expected output is a complete feature file with scenarios, which is not present in the generated text."
+    }
+]

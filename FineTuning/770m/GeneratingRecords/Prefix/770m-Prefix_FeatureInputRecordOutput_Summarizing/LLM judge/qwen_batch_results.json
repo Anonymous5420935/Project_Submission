@@ -1,0 +1,52 @@
+[
+    {
+        "sample_id": 1,
+        "score": 4,
+        "reasoning": "The generated text is identical to the expected text, with no differences in content or structure."
+    },
+    {
+        "sample_id": 2,
+        "score": 3,
+        "reasoning": "The generated text captures the primary intent but introduces minor discrepancies: the feature title includes 'with new records' and the filename is changed to 'cleanup_new_records.feature'. These are stylistic differences that don't affect the core content."
+    },
+    {
+        "sample_id": 3,
+        "score": 4,
+        "reasoning": "The generated text is identical to the expected text, with no differences in content or structure."
+    },
+    {
+        "sample_id": 4,
+        "score": 4,
+        "reasoning": "The generated text is identical to the expected text, with no differences in content or structure."
+    },
+    {
+        "sample_id": 5,
+        "score": 4,
+        "reasoning": "The generated text is identical to the expected text, with no differences in content or structure."
+    },
+    {
+        "sample_id": 6,
+        "score": 3,
+        "reasoning": "The generated text is nearly identical but contains a minor spelling error ('infrastructure' vs. 'infrastruture'), which is a minor stylistic issue that doesn't affect the overall meaning."
+    },
+    {
+        "sample_id": 7,
+        "score": 4,
+        "reasoning": "The generated text is identical to the expected text, with no differences in content or structure."
+    },
+    {
+        "sample_id": 8,
+        "score": 4,
+        "reasoning": "The generated text is identical to the expected text, with no differences in content or structure."
+    },
+    {
+        "sample_id": 9,
+        "score": 4,
+        "reasoning": "The generated text is identical to the expected text, with no differences in content or structure."
+    },
+    {
+        "sample_id": 10,
+        "score": 4,
+        "reasoning": "The generated text is identical to the expected text, with no differences in content or structure."
+    }
+]

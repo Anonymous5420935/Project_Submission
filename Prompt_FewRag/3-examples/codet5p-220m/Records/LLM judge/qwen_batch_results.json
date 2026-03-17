@@ -1,0 +1,52 @@
+[
+    {
+        "sample_id": 1,
+        "score": 1,
+        "reasoning": "The generated text is completely irrelevant. It changes the feature name from 'Database migration tests' to 'Ability to access database' and only includes one check instead of 32 migration/downgrade scenarios. The structure and content are entirely incorrect."
+    },
+    {
+        "sample_id": 2,
+        "score": 2,
+        "reasoning": "The generated text partially captures the background but misses the main scenario. It references a different feature file (list_of_groups.feature) instead of content_info.feature and lacks the actual test scenario for the 'content' endpoint."
+    },
+    {
+        "sample_id": 3,
+        "score": 2,
+        "reasoning": "The generated text captures the feature name and basic background but only includes one downgrade scenario (version 6\u21925) instead of 30 downgrade scenarios. It misses most of the expected content and structural elements."
+    },
+    {
+        "sample_id": 4,
+        "score": 1,
+        "reasoning": "The generated text is irrelevant. It contains repeated background sections with duplicated steps and no actual scenarios. The feature name and content are completely different from the expected 'list_of_clusters' endpoint tests."
+    },
+    {
+        "sample_id": 5,
+        "score": 1,
+        "reasoning": "The generated text is irrelevant. It contains only background setup with multiple redundant links to non-existent files and no actual scenarios. The feature name and content are completely different from the expected 'organizations' endpoint tests."
+    },
+    {
+        "sample_id": 6,
+        "score": 1,
+        "reasoning": "The generated text is irrelevant. It contains repeated 'Given' steps with no actual scenarios. The feature name and content are completely different from the expected 'results_for_cluster_list' endpoint tests."
+    },
+    {
+        "sample_id": 7,
+        "score": 1,
+        "reasoning": "The generated text is irrelevant. It contains repeated 'Given' steps with no actual scenarios. The feature name and content are completely different from the expected 'results_for_cluster_list' endpoint tests."
+    },
+    {
+        "sample_id": 8,
+        "score": 1,
+        "reasoning": "The generated text is completely irrelevant. It contains Java code instead of a BDD feature file. The content has nothing to do with the expected smoke tests for Insights Results Aggregator."
+    },
+    {
+        "sample_id": 9,
+        "score": 2,
+        "reasoning": "The generated text partially captures the intent but has major issues. It changes the component from 'aggregator_cleaner' to 'notification_writer' and repeats the same scenario multiple times instead of the 4 unique scenarios in the expected text."
+    },
+    {
+        "sample_id": 10,
+        "score": 2,
+        "reasoning": "The generated text partially captures the intent but has major structural issues. It changes the component from 'aggregator_cleaner' to 'notification_service' and includes an irrelevant table with incomplete data instead of the 5 expected scenarios for displaying old records."
+    }
+]

@@ -1,0 +1,443 @@
+----------- Example 1 -----------
+
+[INPUT TEXT]
+
+generate test scenario: Feature: Colormap
+
+Colormaps return the first color instead of the last when the domain is empty.
+Explicit colormap domains aren't required for toyplot.canvas.matrix().
+Deprecated implicit conversion from palettes to colormaps for matrix visualization.
+Removed deprecated colormap and palette parameters from the API.
+
+
+[CORRECT OUTPUT (REFERENCE)]
+
+Scenario: Custom diverging color map
+    When the user creates a custom diverging color map
+    Then the custom diverging color map can be rendered as ipython html
+
+
+[MODEL GENERATED OUTPUT (PREDICTION)]
+
+ Scenario: Diverging color map colors
+    When the user creates a default diverging color map with domain
+    Then individual values can be mapped to colors by the diverging color map
+
+----------- Example 2 -----------
+
+[INPUT TEXT]
+
+generate test scenario: re step matcher allows to use regular expressions in step definition . the named parameter syntax (?Pname>...) should be used to extract parameters from the step definition . step matcher allows to use regular expressions in step definition .
+
+
+[CORRECT OUTPUT (REFERENCE)]
+
+Scenario: Optional parameter 1 is missing
+        Given I use the regular expression step matcher
+        When I try to match optional "foo"
+        Then the parameter "foo" is "foo"
+        And  the parameter "an_" is none
+
+
+[MODEL GENERATED OUTPUT (PREDICTION)]
+
+Scenario: Optional parameter 1 is missing
+        Given I use the regular expression step matcher
+        When I try to match optional "foo"
+        Then the parameter "foo" is "foo"
+        And  the parameter "an_" is none
+
+
+
+----------- Example 3 -----------
+
+[INPUT TEXT]
+
+generate test scenario: Feature: Checking REST API endpoint that returns list of clusters hitting specified rule
+
+
+
+  Background:
+    Given REST API service hostname is localhost
+      And REST API service port is 8080
+      And REST API service prefix is /api/insights-results-aggregator/v2
+
+## [`insights-results-aggregator-mock/clusters_hitting_rule.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/insights-results-aggregator-mock/clusters_hitting_rule.feature)
+
+* Check if Insights Results Aggregator Mock service returns correct list of clusters for rule ccx_rules_ocp.external.rules.cluster_wide_proxy_auth_check
+* Check if Insights Results Aggregator Mock service returns correct list of clusters for rule minimum requirements
+* Check if Insights Results Aggregator Mock service returns correct list of clusters for rule ccx_rules_ocp.external.bug_rules.bug_1766907
+* Check if Insights Results Aggregator Mock service returns correct list of clusters for rule ccx_rules_ocp.external.rules.nodes_kubelet_version_check
+* Check if Insights Results Aggregator Mock service returns correct list of clusters for rule ccx_rules_ocp.external.rules.samples_op_failed_image_import_check
+
+
+[CORRECT OUTPUT (REFERENCE)]
+
+  @rest-api
+  Scenario: Check if Insights Results Aggregator Mock service returns correct list of clusters for rule ccx_rules_ocp.external.rules.cluster_wide_proxy_auth_check
+    Given the system is in default state
+     When I request list of clusters hitting rule with name ccx_rules_ocp.external.rules.cluster_wide_proxy_auth_check and error key AUTH_OPERATOR_PROXY_ERROR
+     Then The status code of the response is 200
+      And The metadata should contain following attributes
+         | Attribute name | Attribute value                                                   |
+         | count          | 2                                                                 |
+         | component      | ccx_rules_ocp.external.rules.cluster_wide_proxy_auth_check.report |
+         | error_key      | AUTH_OPERATOR_PROXY_ERROR                                         |
+      And I should retrieve following list of clusters stored in attribute data
+         | Cluster name                         |
+         | 00000001-8d6a-43cc-b82c-7007664bdf69 |
+         | 00000001-3333-3333-3333-000000000000 |
+
+
+[MODEL GENERATED OUTPUT (PREDICTION)]
+
+  @rest-api
+  Scenario: Check if Insights Results Aggregator Mock service returns correct list of clusters for rule ccx_rules_ocp.external.rules.cluster_wide_proxy_auth_check
+    Given the system is in default state
+     When I request list of clusters hitting rule with name ccx_rules_ocp.external.rules.cluster_wide_proxy_auth_check and error key AUTH_OPERATOR_PROXY_ERROR
+     Then The status code of the response is 200
+      And The metadata should contain following attributes
+         | Attribute name | Attribute value                                                   |
+         | count          | 2                                                                 |
+         | component      | ccx_rules_ocp.external.rules.cluster_wide_proxy_auth_check.report |
+         | error_key      | AUTH_OPERATOR_PROXY_ERROR                                         |
+      And I should retrieve following list of clusters stored in attribute data
+         | Cluster name                         |
+         | 00000001-8d6a-43cc-b82c-7007664bdf69 |
+         | 00000001-3333-3333-3333-000000000000 |
+
+-----------------------------------
+
+
+----------- Example 4 -----------
+
+[INPUT TEXT]
+
+generate test scenario: python-docx requires a set of read/write latent style properties . the default Word 2011 template sets default behavior for latent styles . default_to_hidden Boolean specifying whether the default behavior for latent styles is to be hidden .
+
+
+[CORRECT OUTPUT (REFERENCE)]
+
+ Scenario Outline: Set on/off latent style properties
+    Given a latent style having <prop-name> set <setting>
+     When I assign <new-value> to latent_style.<prop-name>
+     Then latent_style.<prop-name> is <value>
+
+    Examples: Latent style hidden values
+      | prop-name        | setting    | new-value | value |
+      | hidden           | no setting | True      | True  |
+      | hidden           | on         | False     | False |
+      | hidden           | off        | None      | None  |
+      | locked           | no setting | False     | False |
+      | locked           | off        | True      | True  |
+      | locked           | on         | None      | None  |
+      | quick_style      | no setting | True      | True  |
+      | quick_style      | on         | False     | False |
+      | quick_style      | off        | None      | None  |
+      | unhide_when_used | no setting | False     | False |
+      | unhide_when_used | off        | True      | True  |
+      | unhide_when_used | on         | False     | False |
+
+
+[MODEL GENERATED OUTPUT (PREDICTION)]
+
+ Scenario Outline: Set on/off latent style properties
+    Given a latent style having <prop-name> set <setting>
+     When I assign <new-value> to latent_style.<prop-name>
+     Then latent_style.<prop-name> is <value>
+
+    Examples: Latent style hidden values
+      | prop-name         | setting    | new-value | value |
+      | hidden           | no setting | True      | True  |
+      | hidden           | on         | False     | False |
+      | hidden           | off        | None      | None  |
+      | locked           | no setting | False     | False |
+      | locked           | off        | True      | True  |
+      | locked           | on         | None      | None  |
+      | quick_style      | no setting | True      | True  |
+      | quick_style      | on         | False     | False |
+      | quick_style      | off        | None      | None  |
+
+-----------------------------------
+
+----------- Example 5 -----------
+
+[INPUT TEXT]
+
+generate test scenario: Feature: Overview page behaviour on Advanced Cluster Management
+## [`ACM/overview.page.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/ACM/overview.page.feature)
+
+* Displaying "Overview" page on ACM for one managed cluster in Ready state managed by AWS infrastruture
+
+
+[CORRECT OUTPUT (REFERENCE)]
+
+Scenario: Displaying "Overview" page on ACM for one managed cluster in Ready state managed by AWS infrastruture
+    Given user USER1 is part of account (organization) ACCOUNT1
+      And account (organization) ACCOUNT1 owns one managed cluster
+      And the infrastructure for that managed cluster is provided by Amazon Web Services
+      And that managed cluster should be in Ready state
+      And 0 issues are detected for this cluster
+      And the user USER1 is already logged in into Advanced Cluster Management
+     When user looks at Advanced Cluster Management main page
+     Then menu on the left side should be displayed
+      And the left menu might contain these top level items
+          | Left menu item      | Required for this test |
+          | Home                | yes                    |
+          | Infrastructure      | no                     |
+          | Applications        | no                     |
+          | Governance          | no                     |
+          | Credential          | no                     |
+          | Visual Web Terminal | no                     |
+     When user expand "Home" top level item
+     Then the menu should be expanded under "Home" top level item
+      And following new items should be displayed in the sub-menu on the left side
+          | Expanded menu item  | Required for this test |
+          | Welcome             | no                     |
+          | Overview            | yes                    |
+     When user select "Overview" menu item from this sub-menu
+     Then an "Overview" page should be displayed right of the left menu bar
+      And several sections needs to be placed on the page
+          | Section             | Required for this test |
+          | AWS Amazon          | yes                    |
+          | Summary             | yes                    |
+          | Cluster compliance  | no                     |
+          | Pods                | no                     |
+          | Cluster status      | no                     |
+          | Cluster issues      | yes                    |
+      And "AWS Amazon" section should say "1 cluster"
+      And "Cluster issues" section should contain information about no issues
+
+
+
+[MODEL GENERATED OUTPUT (PREDICTION)]
+
+Scenario: Displaying "Overview" page on ACM for one managed cluster in Ready state managed by AWS infrastruture
+Given user USER1 is part of account (organization) ACCOUNT1
+And account (organization) ACCOUNT1 owns one managed cluster
+And the infrastructure for that managed cluster is provided by Amazon Web Services
+And that managed cluster should be in Ready state
+And 0 issues are detected for this cluster
+And the user USER1 is already logged in into Advanced Cluster Management
+When user looks at Advanced Cluster Management main page
+Then menu on the left side should be displayed
+And the left menu might contain these top level items
+| Left menu item      | Required for this test |
+| Home                | yes                    |
+| Infrastructure      | no                     |
+| Applications        | no                     |
+| Governance          | no                     |
+| Credential          | no                     |
+| Visual Web Terminal | no                     |
+When user expand "Home" top level item
+Then the menu should be expanded
+And following new items should be displayed in the sub-menu on the left side
+| Expanded menu item  | Required for this test |
+| Welcome             | no                     |
+| Overview            | yes                    |
+When user select "Overview" menu item from this sub-menu
+Then an "Overview" page should be displayed right of menu
+And several sections needs to be placed on the page
+| Section             | Required for this test |
+| AWS Amazon          | yes                    |
+| Summary             | yes                    |
+| Cluster compliance  | no                     |
+| Pods                | no                     |
+| Cluster status      | no                     |
+| Cluster issues      | yes                    |
+And "AWS Amazon" section should say "1 cluster"
+When I look into "Cluster issues" section
+Then I should see a label saying "Cluster issues 0"
+And I should see a table with issue counters
+And I should see a donut chart representing issue counts splitted by risk
+When I look at a table with issue counters
+Then issue counters should display
+| Severity  | Number | Color  |
+| Critical  | 0      | red    |
+| Important | 0      | orange |
+| Moderate  | 0      | yellow |
+| Low       | 0      | blue   |
+When I look at a donut chart representing issue counts
+Then the don
+
+----------- Example 6 -----------
+
+[INPUT TEXT]
+
+generate test scenario: Feature: Advisor recommendations page behaviour on Hybrid Cloud Console - expanding information about selected recommendation
+## [`Insights_Advisor/recommendations_page_expanded_info.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/Insights_Advisor/recommendations_page_expanded_info.feature)
+
+* Displaying expanded information about selected recommendation with high likelihood and high impact
+* Displaying expanded information about selected recommendation with medium likelihood and low impact
+* Displaying expanded information about selected recommendation with critical likelihood and low impact
+
+
+[CORRECT OUTPUT (REFERENCE)]
+
+user USER1 is part of account (organization) ACCOUNT1 And account (organization) ACCOUNT1 owns 1 cluster And 1 issue is detected for this cluster . when user looks at Hybrid Cloud Console main page, menu on the left side should be displayed . menu on the left side might contain these top level items .
+
+
+[MODEL GENERATED OUTPUT (PREDICTION)]
+
+user USER1 is part of account (organization) ACCOUNT1 And account (organization) ACCOUNT1 owns 1 cluster And 1 issue is detected for this cluster . when user looks at Hybrid Cloud Console main page, menu on the left side should be displayed . menu on the left side might contain these top level items .
+
+----------- Example 7 -----------
+
+[INPUT TEXT]
+
+generate test scenario: Feature: Processing a new iNaturalist observation populates a new WeedVisits record correctly
+
+	Rule: Optional fields are set on WeedVisits record
+
+
+* `"WeedLocations"` is the name of the layer or table (note this is either `WeedLocations` or `Weed_Visits` with the current schema)
+
+The iNaturalist observations are selected based on taxon and place (e.g. *old man's beard* in *Wellington*). Each matching iNaturalist observation creates a new Feature in CAMS, with a parent `WeedLocation` record and a child `WeedVisit` record. Updates to the iNaturalist observation may create additional `WeedVisit` records, dependent on what caused the update, for example:
+
+
+[CORRECT OUTPUT (REFERENCE)]
+
+Example: New Site difficulty field is preferred if both are provided
+		Given iNaturalist has a new OMB observation with  'Site difficulty' set to '1 Easy (for most people)' and 'Professional assistance required' set to 'yes'
+		When we process the observation
+		Then the visits record has 'SiteDifficulty' set to '1Easy'
+
+
+[MODEL GENERATED OUTPUT (PREDICTION)]
+
+Example: Area is set if provided
+		Given iNaturalist has a new OMB observation with 'Area in square meters' set to 150
+		When we process the observation
+		Then the visits record has 'Area' set to 150
+
+----------- Example 8 -----------
+
+[INPUT TEXT]
+
+generate test scenario: Feature: Processing a new iNaturalist observation populates a new WeedVisits record correctly
+
+	Rule: Optional fields are set on WeedVisits record
+
+
+* `"WeedLocations"` is the name of the layer or table (note this is either `WeedLocations` or `Weed_Visits` with the current schema)
+
+The iNaturalist observations are selected based on taxon and place (e.g. *old man's beard* in *Wellington*). Each matching iNaturalist observation creates a new Feature in CAMS, with a parent `WeedLocation` record and a child `WeedVisit` record. Updates to the iNaturalist observation may create additional `WeedVisit` records, dependent on what caused the update, for example:
+
+
+[CORRECT OUTPUT (REFERENCE)]
+
+Example: Treatment Substance is not set if None
+		Given iNaturalist has a new OMB observation with 'Treatment substance' set to 'None'
+		When we process the observation
+		Then the visits record has 'TreatmentSubstance' set to None
+
+
+[MODEL GENERATED OUTPUT (PREDICTION)]
+
+Example: Area is set if provided
+		Given iNaturalist has a new OMB observation with 'Area in square meters' set to 150
+		When we process the observation
+		Then the visits record has 'Area' set to 150
+
+----------- Example 9 -----------
+
+[INPUT TEXT]
+
+generate test scenario: Feature: Processing a new iNaturalist observation populates the correct taxon on the new WeedLocation feature
+
+	Rule: Taxon must exist in the mapping table
+		
+### Taxon mapping
+
+The [taxon_mapping](config/taxon_mapping.json) file contains a mapping from the iNaturalist taxon to the CAMS taxon. Note that all `taxon_ids` listed in the `sync_configuration` file must have a taxon mapping entry.
+
+An example definition is:
+
+    {
+        "160697": "OldMansBeard",
+        "285911": "CathedralBells",
+        "879226": "BananaPassionfruit"
+    }
+
+where:
+
+* `"160697"`is the iNaturalist taxon id for Old Man's Beard
+* `"OldMansBeard"` is the CAMS taxon name for Old Man's Beard. The list of taxon names can be viewed on ArcGIS by opening the feature layer, clicking on `Data` > `Fields` > `Species Menu Dropdown`
+then clicking the `Edit` button next to `List of Values (Domain)`. The taxon name is the `Code` value.
+
+#### iNaturalist
+We do not have a test environment for iNaturalist, so do not perform any automated testing against iNaturalist. The operations we currently perform do not need an iNaturalist account, so are performed anonymously.
+
+
+[CORRECT OUTPUT (REFERENCE)]
+
+Example: An error is logged if taxon is not in the mapping file
+		Given iNaturalist has a new OMB observation with id 1001 for taxon 123456 with ancestors [123456]
+		When we process the observation
+		Then the error "Skipping observation 1001 since it has unmapped taxon with lineage" is logged
+
+
+[MODEL GENERATED OUTPUT (PREDICTION)]
+
+Example: An error is logged if taxon is not in the mapping file
+		Given iNaturalist has a new OMB observation with id 1003 for taxon 123456 with ancestors [123456]
+		When we process the observation
+		Then the error "Skipping observation 1003 because it has unmapped taxon with ancestors" is logged
+
+----------- Example 10 -----------
+
+[INPUT TEXT]
+
+generate test scenario: Feature: Tab stop properties
+  To change the properties of an individual tab stop
+  As a developer using python-docx
+  I need a set of read/write properties on TabStop
+
+Link:https://python-docx.readthedocs.io/en/latest/api/text.html?highlight=tabstops#tabstop-objects
+TabStop objects
+class docx.text.tabstops.TabStop[source]
+An individual tab stop applying to a paragraph or style.
+
+Accessed using list semantics on its containing TabStops object.
+
+alignment
+A member of WD_TAB_ALIGNMENT specifying the alignment setting for this tab stop.
+
+Read/write.
+
+leader
+A member of WD_TAB_LEADER specifying a repeating character used as a “leader”, filling in the space spanned by this tab.
+
+Assigning None produces the same result as assigning WD_TAB_LEADER.SPACES. Read/write.
+
+position
+A Length object representing the distance of this tab stop from the inside edge of the paragraph.
+
+May be positive or negative. Read/write.
+
+
+[CORRECT OUTPUT (REFERENCE)]
+
+Scenario Outline: Set TabStop.leader
+   Given a tab stop having <leader> leader
+    When I assign <member> to tab_stop.leader
+     Then tab_stop.leader is <member>
+
+    Examples: tab stop leaders
+      | leader       | member |
+      | no specified | DOTS   |
+      | a dotted     | SPACES |
+
+
+[MODEL GENERATED OUTPUT (PREDICTION)]
+
+  Scenario Outline: Set TabStop.position
+   Given a tab stop 0.5 inches in from the paragraph left edge
+    When I assign <value> to tab_stop.position
+     Then tab_stop.position is <value>
+
+    Examples: tab stop positions
+      |  value  |
+      |  228600 |
+      | -914400 |
+-----------------------------------

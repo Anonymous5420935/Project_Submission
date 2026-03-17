@@ -1,0 +1,52 @@
+[
+    {
+        "sample_id": 1,
+        "score": 1,
+        "reasoning": "Generated text is a task description and instructions, not the actual BDD scenario. It lacks Gherkin syntax and specific steps."
+    },
+    {
+        "sample_id": 2,
+        "score": 1,
+        "reasoning": "Generated text is a task description and instructions, not the actual BDD scenario. It lacks Gherkin syntax and specific steps."
+    },
+    {
+        "sample_id": 3,
+        "score": 1,
+        "reasoning": "Generated text is a task description and instructions, not the actual BDD scenario. It lacks Gherkin syntax and specific steps."
+    },
+    {
+        "sample_id": 4,
+        "score": 1,
+        "reasoning": "Generated text is a task description and instructions, not the actual BDD scenario. It lacks Gherkin syntax and specific steps."
+    },
+    {
+        "sample_id": 5,
+        "score": 1,
+        "reasoning": "Generated text is a task description and instructions, not the actual BDD scenario. It lacks Gherkin syntax and specific steps."
+    },
+    {
+        "sample_id": 6,
+        "score": 1,
+        "reasoning": "Generated text is a task description and instructions, not the actual BDD scenario. It lacks Gherkin syntax and specific steps."
+    },
+    {
+        "sample_id": 7,
+        "score": 1,
+        "reasoning": "Generated text is a task description and instructions, not the actual BDD scenario. It lacks Gherkin syntax and specific steps."
+    },
+    {
+        "sample_id": 8,
+        "score": 1,
+        "reasoning": "Generated text is a task description and instructions, not the actual BDD scenario. It lacks Gherkin syntax and specific steps."
+    },
+    {
+        "sample_id": 9,
+        "score": 1,
+        "reasoning": "Generated text is a task description and instructions, not the actual BDD scenario. It lacks Gherkin syntax and specific steps."
+    },
+    {
+        "sample_id": 10,
+        "score": 1,
+        "reasoning": "The generated text is a meta-instruction about writing BDD scenarios (including a task description and formatting rules), not the actual BDD scenario itself. It completely misses the expected content (database vacuuming steps, data tables, and specific tags like @database). The output is irrelevant to the requested task."
+    }
+]

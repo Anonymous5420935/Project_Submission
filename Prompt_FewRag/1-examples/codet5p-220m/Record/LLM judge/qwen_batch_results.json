@@ -1,0 +1,52 @@
+[
+    {
+        "sample_id": 1,
+        "score": 1,
+        "reasoning": "The generated text is a Java class with imports and no Gherkin structure, completely unrelated to the expected database migration tests feature file."
+    },
+    {
+        "sample_id": 2,
+        "score": 1,
+        "reasoning": "The generated text is a Java class with imports, not a Gherkin feature file. It lacks any reference to the 'content' endpoint or REST API testing."
+    },
+    {
+        "sample_id": 3,
+        "score": 2,
+        "reasoning": "The generated text includes the correct feature name and background but only provides one example scenario instead of the 30 downgrade scenarios listed in the expected. It misses significant structural and content details."
+    },
+    {
+        "sample_id": 4,
+        "score": 2,
+        "reasoning": "The generated text shares the same background as the expected but focuses on basic REST API endpoints rather than the specific 'list of clusters' endpoint scenarios. It partially captures the intent but misses key test cases."
+    },
+    {
+        "sample_id": 5,
+        "score": 2,
+        "reasoning": "The generated text uses the same background but tests basic REST API endpoints instead of the specific 'organizations' endpoint scenarios. It captures partial structure but misses the expected test cases."
+    },
+    {
+        "sample_id": 6,
+        "score": 2,
+        "reasoning": "The generated text shares the background but focuses on basic REST API endpoints rather than the specific 'results for cluster list' scenarios. It partially aligns with the structure but misses the expected test cases."
+    },
+    {
+        "sample_id": 7,
+        "score": 1,
+        "reasoning": "The generated text is a Java class with Jackson annotations, completely unrelated to the expected Gherkin feature about rule acking. No relevant content is present."
+    },
+    {
+        "sample_id": 8,
+        "score": 1,
+        "reasoning": "The generated text is a Gherkin feature for CCX Notification Writer smoke tests, not Insights Results Aggregator. It references different tools and services, making it irrelevant to the expected content."
+    },
+    {
+        "sample_id": 9,
+        "score": 2,
+        "reasoning": "The generated text includes a Kafka consumer feature with some overlap in the 'Kafka not reachable' scenario but lacks the expected scenarios about configuration errors and non-existent files. It partially captures the intent but misses key tests."
+    },
+    {
+        "sample_id": 10,
+        "score": 2,
+        "reasoning": "The generated text is a cleanup feature for CCX Notification Writer with different database tables and scenarios. It shares the cleanup theme but misses the specific 'old records' and 'orphan records' tests from the expected content."
+    }
+]

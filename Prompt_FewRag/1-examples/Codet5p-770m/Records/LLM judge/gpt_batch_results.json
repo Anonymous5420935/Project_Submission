@@ -1,0 +1,52 @@
+[
+    {
+        "sample_id": 1,
+        "score": 1,
+        "reasoning": "The generated text describes a different feature (database access) with a different title, missing the required background line about the aggregator database, and lists unrelated checks. It does not match the expected migration\u2011test feature at all."
+    },
+    {
+        "sample_id": 2,
+        "score": 2,
+        "reasoning": "The background section is correct, but the generated feature targets the \"groups\" endpoint instead of the expected \"content\" endpoint and links to a different feature file. The checklist item matches, but the endpoint mismatch is a major error."
+    },
+    {
+        "sample_id": 3,
+        "score": 1,
+        "reasoning": "The generated content is about displaying old records in a different service (ccx\u2011notification\u2011writer) with a completely different title, background, link and checklist. It bears no resemblance to the expected downgrade\u2011migration tests."
+    },
+    {
+        "sample_id": 4,
+        "score": 1,
+        "reasoning": "The generated text describes generic REST API endpoint checks and points to a different feature file, whereas the expected text is specifically about the \"organizations\" endpoint with its own checklist."
+    },
+    {
+        "sample_id": 5,
+        "score": 1,
+        "reasoning": "Again the generated output is the generic \"basic_rest_api\" feature, not the expected \"results_for_cluster_list\" feature and its specific checklist."
+    },
+    {
+        "sample_id": 6,
+        "score": 1,
+        "reasoning": "The generated content is the generic REST API feature, not the expected rule\u2011acknowledgement feature and its specific list of rule\u2011related checks."
+    },
+    {
+        "sample_id": 7,
+        "score": 1,
+        "reasoning": "The expected smoke\u2011test feature is for the aggregator service, but the generated version is for the notification\u2011writer service with a different tag, title and checklist items."
+    },
+    {
+        "sample_id": 8,
+        "score": 1,
+        "reasoning": "Same mismatch as sample 7: the generated text refers to the notification\u2011writer smoke tests instead of the aggregator smoke tests."
+    },
+    {
+        "sample_id": 9,
+        "score": 1,
+        "reasoning": "The expected cleaner feature for the aggregator is replaced by a notification\u2011writer cleanup feature with different background, tag and checklist."
+    },
+    {
+        "sample_id": 10,
+        "score": 1,
+        "reasoning": "The generated output describes displaying old records for the notification\u2011writer service, not the aggregator cleaner feature, and includes a different set of checklist items."
+    }
+]

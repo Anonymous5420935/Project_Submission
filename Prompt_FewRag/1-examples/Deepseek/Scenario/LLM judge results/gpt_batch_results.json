@@ -1,0 +1,52 @@
+[
+    {
+        "sample_id": 1,
+        "score": 1,
+        "reasoning": "The generated output only contains a stray '}' and unrelated task metadata, none of the expected BDD scenario steps, tags, or tables. It does not match the expected content at all."
+    },
+    {
+        "sample_id": 2,
+        "score": 1,
+        "reasoning": "The generated text is just a closing brace, lacking any of the scenario description, steps, or data tables present in the expected output."
+    },
+    {
+        "sample_id": 3,
+        "score": 1,
+        "reasoning": "The generated output does not include any of the expected scenario lines, tags, or tables; it is only a stray '}'."
+    },
+    {
+        "sample_id": 4,
+        "score": 1,
+        "reasoning": "The generated content is empty (just a '}'), missing the entire expected scenario with tags, steps, and messages."
+    },
+    {
+        "sample_id": 5,
+        "score": 1,
+        "reasoning": "The generated output does not contain the expected scenario, tags, or any of the step definitions; it is essentially empty."
+    },
+    {
+        "sample_id": 6,
+        "score": 1,
+        "reasoning": "The generated text is missing entirely; it does not match any part of the expected scenario."
+    },
+    {
+        "sample_id": 7,
+        "score": 1,
+        "reasoning": "The generated section is blank, providing no scenario, steps, or tags that appear in the expected output."
+    },
+    {
+        "sample_id": 8,
+        "score": 1,
+        "reasoning": "The generated output is empty and does not include the expected @database tag or scenario steps."
+    },
+    {
+        "sample_id": 9,
+        "score": 1,
+        "reasoning": "The generated content is absent; none of the extensive expected scenario, tables, or assertions are present."
+    },
+    {
+        "sample_id": 10,
+        "score": 1,
+        "reasoning": "The generated output is missing; it does not contain any of the expected scenario, tags, or data tables."
+    }
+]

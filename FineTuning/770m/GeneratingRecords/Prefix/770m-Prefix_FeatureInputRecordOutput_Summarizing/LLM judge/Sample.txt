@@ -1,0 +1,419 @@
+----------- Example 1 -----------
+
+[INPUT TEXT]
+
+generate record from feature: Scenario: Custom diverging color map
+    When the user creates a custom diverging color map
+    Then the custom diverging color map can be rendered as ipython html
+
+
+[CORRECT OUTPUT (REFERENCE)]
+
+Feature: Colormap
+
+Colormaps return the first color instead of the last when the domain is empty.
+Explicit colormap domains aren't required for toyplot.canvas.matrix().
+Deprecated implicit conversion from palettes to colormaps for matrix visualization.
+Removed deprecated colormap and palette parameters from the API.
+
+
+[MODEL GENERATED OUTPUT (PREDICTION)]
+
+Feature: Colormap
+
+Colormaps return the first color instead of the last when the domain is empty.
+Explicit colormap domains aren't required for toyplot.canvas.matrix().
+Deprecated implicit conversion from palettes to colormaps for matrix visualization.
+Removed deprecated colormap and palette parameters from the API.
+
+----------- Example 2 -----------
+
+[INPUT TEXT]
+
+generate record from feature:   @cli @database @database-write
+  Scenario: Check the ability to clean up old records from `reported` table if the table contains two old reports.
+     When I insert following rows into table reported
+          | org id |  account number | cluster name                         | notification type | state | updated at  | notified at  | error log | event type id |
+          | 1      |  10             | 5d5892d4-1f74-4ccf-91af-548dfc9767aa | 1                 | 1     | 1990-01-01  | 1990-01-01   |           | 1             |
+          | 2      |  20             | aaaaaaaa-1f74-4ccf-91af-548dfc9767aa | 1                 | 1     | 1990-01-01  | 1990-01-01   |           | 1             |
+      And I select all rows from table reported
+     Then I should get 2 rows
+     When I close database connection
+     Then I should be disconnected
+     When I start the CCX Notification Writer with the --old-reports-cleanup command line flag
+     Then the process should exit with status code set to 0
+     When database connection is established
+      And I select all rows from table reported
+     Then I should get 0 rows
+     When I close database connection
+     Then I should be disconnected
+
+
+[CORRECT OUTPUT (REFERENCE)]
+
+@notification_writer
+Feature: Ability to clean up old records stored in database
+
+
+  Background: Dependencies are prepared
+  Given the system is in default state
+    And the database is named notification
+    And database user is set to postgres
+    And database password is set to postgres
+    And database connection is established
+    And CCX Notification database is empty
+    And CCX Notification database is migrated to version latest
+
+## [`ccx-notification-writer/cleanup_old_records.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/ccx-notification-writer/cleanup_old_records.feature)
+
+* Check the ability to clean up old records from `new_reports` table if the table is empty.
+* Check the ability to clean up old records from `reported` table if the table is empty.
+* Check the ability to clean up old records from `new_reports` table if the table contains one old report.
+* Check the ability to clean up old records from `new_reports` table if the table contains two old reports.
+* Check the ability to clean up old records from `reported` table if the table contains one old report.
+* Check the ability to clean up old records from `reported` table if the table contains two old reports.
+
+
+[MODEL GENERATED OUTPUT (PREDICTION)]
+
+@notification_writer
+Feature: Ability to clean up old records stored in database with new records
+
+
+  Background: Dependencies are prepared
+  Given the system is in default state
+    And the database is named notification
+    And database user is set to postgres
+    And database password is set to postgres
+    And database connection is established
+    And CCX Notification database is empty
+    And CCX Notification database is migrated to version latest
+
+## [`ccx-notification-writer/cleanup_new_records.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/ccx-notification-writer/cleanup_new_records.feature)
+
+* Check the ability to clean up old records from `new_reports` table if the table is empty.
+* Check the ability to clean up old records from `reported` table if the table is empty.
+* Check the ability to clean up old records from `new_reports` table if the table contains one old report.
+* Check the ability to clean up old records from `new_reports` table if the table contains two old reports.
+* Check the ability to clean up old records from `reported` table if the table contains one old report.
+* Check the ability to clean up old records from `reported` table if the table contains two old reports.
+
+
+----------- Example 3 -----------
+
+[INPUT TEXT]
+
+generate record from feature: Scenario: Optional parameter 1 is missing
+        Given I use the regular expression step matcher
+        When I try to match optional "foo"
+        Then the parameter "foo" is "foo"
+        And  the parameter "an_" is none
+
+
+[CORRECT OUTPUT (REFERENCE)]
+
+_id.step_matcher.re_matcher: ==================================================================================================
+
+
+[MODEL GENERATED OUTPUT (PREDICTION)]
+
+_id.step_matcher.re_matcher: ==================================================================================================
+
+-----------------------------------
+
+----------- Example 4 -----------
+
+[INPUT TEXT]
+
+generate record from feature:   @rest-api
+  Scenario: Check if Insights Results Aggregator Mock service returns correct list of clusters for rule ccx_rules_ocp.external.rules.cluster_wide_proxy_auth_check
+    Given the system is in default state
+     When I request list of clusters hitting rule with name ccx_rules_ocp.external.rules.cluster_wide_proxy_auth_check and error key AUTH_OPERATOR_PROXY_ERROR
+     Then The status code of the response is 200
+      And The metadata should contain following attributes
+         | Attribute name | Attribute value                                                   |
+         | count          | 2                                                                 |
+         | component      | ccx_rules_ocp.external.rules.cluster_wide_proxy_auth_check.report |
+         | error_key      | AUTH_OPERATOR_PROXY_ERROR                                         |
+      And I should retrieve following list of clusters stored in attribute data
+         | Cluster name                         |
+         | 00000001-8d6a-43cc-b82c-7007664bdf69 |
+         | 00000001-3333-3333-3333-000000000000 |
+
+
+[CORRECT OUTPUT (REFERENCE)]
+
+Feature: Checking REST API endpoint that returns list of clusters hitting specified rule
+
+
+
+  Background:
+    Given REST API service hostname is localhost
+      And REST API service port is 8080
+      And REST API service prefix is /api/insights-results-aggregator/v2
+
+## [`insights-results-aggregator-mock/clusters_hitting_rule.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/insights-results-aggregator-mock/clusters_hitting_rule.feature)
+
+* Check if Insights Results Aggregator Mock service returns correct list of clusters for rule ccx_rules_ocp.external.rules.cluster_wide_proxy_auth_check
+* Check if Insights Results Aggregator Mock service returns correct list of clusters for rule minimum requirements
+* Check if Insights Results Aggregator Mock service returns correct list of clusters for rule ccx_rules_ocp.external.bug_rules.bug_1766907
+* Check if Insights Results Aggregator Mock service returns correct list of clusters for rule ccx_rules_ocp.external.rules.nodes_kubelet_version_check
+* Check if Insights Results Aggregator Mock service returns correct list of clusters for rule ccx_rules_ocp.external.rules.samples_op_failed_image_import_check
+
+
+[MODEL GENERATED OUTPUT (PREDICTION)]
+
+Feature: Checking REST API endpoint that returns list of clusters hitting specified rule
+
+
+
+  Background:
+    Given REST API service hostname is localhost
+      And REST API service port is 8080
+      And REST API service prefix is /api/insights-results-aggregator/v2
+
+## [`insights-results-aggregator-mock/clusters_hitting_rule.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/insights-results-aggregator-mock/clusters_hitting_rule.feature)
+
+* Check if Insights Results Aggregator Mock service returns correct list of clusters for rule ccx_rules_ocp.external.rules.cluster_wide_proxy_auth_check
+* Check if Insights Results Aggregator Mock service returns correct list of clusters for rule minimum requirements
+* Check if Insights Results Aggregator Mock service returns correct list of clusters for rule ccx_rules_ocp.external.bug_rules.bug_1766907
+* Check if Insights Results Aggregator Mock service returns correct list of clusters for rule ccx_rules_ocp.external.rules.nodes_kubelet_version_check
+* Check if Insights Results Aggregator Mock service returns correct list of clusters for rule ccx_rules_ocp.external.rules.samples_op_failed_image_import_check
+
+----------- Example 5 -----------
+
+[INPUT TEXT]
+
+generate record from feature:  Scenario Outline: Set on/off latent style properties
+    Given a latent style having <prop-name> set <setting>
+     When I assign <new-value> to latent_style.<prop-name>
+     Then latent_style.<prop-name> is <value>
+
+    Examples: Latent style hidden values
+      | prop-name        | setting    | new-value | value |
+      | hidden           | no setting | True      | True  |
+      | hidden           | on         | False     | False |
+      | hidden           | off        | None      | None  |
+      | locked           | no setting | False     | False |
+      | locked           | off        | True      | True  |
+      | locked           | on         | None      | None  |
+      | quick_style      | no setting | True      | True  |
+      | quick_style      | on         | False     | False |
+      | quick_style      | off        | None      | None  |
+      | unhide_when_used | no setting | False     | False |
+      | unhide_when_used | off        | True      | True  |
+      | unhide_when_used | on         | False     | False |
+
+
+[CORRECT OUTPUT (REFERENCE)]
+
+the default default behavior for latent styles is to be hidden . default_to_locked Boolean specifying whether the default behavior is to be locked . default_to_unhide_when_used Boolean specifying whether the default behavior is to be unhidden when first applied to content .
+
+
+[MODEL GENERATED OUTPUT (PREDICTION)]
+
+the default default behavior for latent styles is to be hidden . default_to_locked Boolean specifying whether the default behavior is to be locked . default_to_unhide_when_used Boolean specifying whether the default behavior is to be unhidden when first applied to content .
+
+----------- Example 6 -----------
+
+[INPUT TEXT]
+
+generate record from feature: Scenario: Displaying "Overview" page on ACM for one managed cluster in Ready state managed by AWS infrastruture
+    Given user USER1 is part of account (organization) ACCOUNT1
+      And account (organization) ACCOUNT1 owns one managed cluster
+      And the infrastructure for that managed cluster is provided by Amazon Web Services
+      And that managed cluster should be in Ready state
+      And 0 issues are detected for this cluster
+      And the user USER1 is already logged in into Advanced Cluster Management
+     When user looks at Advanced Cluster Management main page
+     Then menu on the left side should be displayed
+      And the left menu might contain these top level items
+          | Left menu item      | Required for this test |
+          | Home                | yes                    |
+          | Infrastructure      | no                     |
+          | Applications        | no                     |
+          | Governance          | no                     |
+          | Credential          | no                     |
+          | Visual Web Terminal | no                     |
+     When user expand "Home" top level item
+     Then the menu should be expanded under "Home" top level item
+      And following new items should be displayed in the sub-menu on the left side
+          | Expanded menu item  | Required for this test |
+          | Welcome             | no                     |
+          | Overview            | yes                    |
+     When user select "Overview" menu item from this sub-menu
+     Then an "Overview" page should be displayed right of the left menu bar
+      And several sections needs to be placed on the page
+          | Section             | Required for this test |
+          | AWS Amazon          | yes                    |
+          | Summary             | yes                    |
+          | Cluster compliance  | no                     |
+          | Pods                | no                     |
+          | Cluster status      | no                     |
+          | Cluster issues      | yes                    |
+      And "AWS Amazon" section should say "1 cluster"
+      And "Cluster issues" section should contain information about no issues
+
+
+
+[CORRECT OUTPUT (REFERENCE)]
+
+Feature: Overview page behaviour on Advanced Cluster Management
+## [`ACM/overview.page.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/ACM/overview.page.feature)
+
+* Displaying "Overview" page on ACM for one managed cluster in Ready state managed by AWS infrastruture
+
+
+[MODEL GENERATED OUTPUT (PREDICTION)]
+
+Feature: Overview page behaviour on Advanced Cluster Management
+## [`ACM/overview.page.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/ACM/overview.page.feature)
+
+* Displaying "Overview" page on ACM for one managed cluster in Ready state managed by AWS infrastructure
+
+----------- Example 7 -----------
+
+[INPUT TEXT]
+
+generate record from feature: if user clicks on an "expand" arrow, additional information about selected recommendation should be displayed below a row with recommendation info . if user clicks on an "expand" arrow, additional information about selected recommendation should be displayed below a row with recommendation info . when user clicks on an "expand" arrow, additional information about selected recommendation should be displayed .
+
+
+[CORRECT OUTPUT (REFERENCE)]
+
+Feature: Advisor recommendations page behaviour on Hybrid Cloud Console - expanding information about selected recommendation
+## [`Insights_Advisor/recommendations_page_expanded_info.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/Insights_Advisor/recommendations_page_expanded_info.feature)
+
+* Displaying expanded information about selected recommendation with high likelihood and high impact
+* Displaying expanded information about selected recommendation with medium likelihood and low impact
+* Displaying expanded information about selected recommendation with critical likelihood and low impact
+
+
+[MODEL GENERATED OUTPUT (PREDICTION)]
+
+Feature: Advisor recommendations page behaviour on Hybrid Cloud Console - expanding information about selected recommendation
+## [`Insights_Advisor/recommendations_page_expanded_info.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/Insights_Advisor/recommendations_page_expanded_info.feature)
+
+* Displaying expanded information about selected recommendation with high likelihood and high impact
+* Displaying expanded information about selected recommendation with medium likelihood and low impact
+* Displaying expanded information about selected recommendation with critical likelihood and low impact
+
+----------- Example 8 -----------
+
+[INPUT TEXT]
+
+generate record from feature: Example: New Site difficulty field is preferred if both are provided
+		Given iNaturalist has a new OMB observation with  'Site difficulty' set to '1 Easy (for most people)' and 'Professional assistance required' set to 'yes'
+		When we process the observation
+		Then the visits record has 'SiteDifficulty' set to '1Easy'
+
+
+[CORRECT OUTPUT (REFERENCE)]
+
+Feature: Processing a new iNaturalist observation populates a new WeedVisits record correctly
+
+	Rule: Optional fields are set on WeedVisits record
+
+
+* `"WeedLocations"` is the name of the layer or table (note this is either `WeedLocations` or `Weed_Visits` with the current schema)
+
+The iNaturalist observations are selected based on taxon and place (e.g. *old man's beard* in *Wellington*). Each matching iNaturalist observation creates a new Feature in CAMS, with a parent `WeedLocation` record and a child `WeedVisit` record. Updates to the iNaturalist observation may create additional `WeedVisit` records, dependent on what caused the update, for example:
+
+
+[MODEL GENERATED OUTPUT (PREDICTION)]
+
+Feature: Processing a new iNaturalist observation populates a new WeedVisits record correctly
+
+	Rule: Optional fields are set on WeedVisits record
+
+
+* `"WeedLocations"` is the name of the layer or table (note this is either `WeedLocations` or `Weed_Visits` with the current schema)
+
+The iNaturalist observations are selected based on taxon and place (e.g. *old man's beard* in *Wellington*). Each matching iNaturalist observation creates a new Feature in CAMS, with a parent `WeedLocation` record and a child `WeedVisit` record. Updates to the iNaturalist observation may create additional `WeedVisit` records, dependent on what caused the update, for example:
+
+----------- Example 9 -----------
+
+[INPUT TEXT]
+
+generate record from feature:  Scenario: ScenarioOutline with enabled active-tag is executed
+      Given a file named "features/outline1.active_tags.feature" with:
+        """
+        Feature:
+
+          @use.with_browser=chrome
+          Scenario Outline: Alice -- <name>, <language>
+            Given a step passes
+            But note that "<name> can speak <language>"
+
+            Examples:
+              | name     | language |
+              | Anna     | German   |
+              | Arabella | English  |
+        """
+      When I run "behave -D browser=chrome features/outline1.active_tags.feature"
+      Then it should pass with:
+        """
+        2 scenarios passed, 0 failed, 0 skipped
+        4 steps passed, 0 failed, 0 skipped, 0 undefined
+        """
+      And the command output should contain:
+        """
+        @use.with_browser=chrome
+        Scenario Outline: Alice -- Anna, German -- @1.1   # features/outline1.active_tags.feature:10
+          Given a step passes                             # features/steps/pass_steps.py:3
+          But note that "Anna can speak German"           # ../behave4cmd0/note_steps.py:15
+
+        @use.with_browser=chrome
+        Scenario Outline: Alice -- Arabella, English -- @1.2   # features/outline1.active_tags.feature:11
+          Given a step passes                                  # features/steps/pass_steps.py:3
+          But note that "Arabella can speak English"           # ../behave4cmd0/note_steps.py:15
+        """
+      And the command output should not contain "ACTIVE-TAG DISABLED: Scenario Alice"
+      But note that "we check now that tags for example rows are generated correctly"
+      And the command output should not contain "@use.with_browserchrome"
+      But the command output should contain "@use.with_browser=chrome"
+
+
+[CORRECT OUTPUT (REFERENCE)]
+
+an active tag is either enabled or disabled (decided by runtime decision logic) a disabled active tag causes that its feature/scenario is excluded from the run-set . this allows to automatically skip some tests (scenarios, features) that would otherwise fail anyway .
+
+
+[MODEL GENERATED OUTPUT (PREDICTION)]
+
+an active tag is either enabled or disabled (decided by runtime decision logic) a disabled active tag causes that its feature/scenario is excluded from the run-set . this allows to automatically skip some tests (scenarios, features) that would otherwise fail anyway .
+
+
+----------- Example 10 -----------
+
+[INPUT TEXT]
+
+generate record from feature: Example: Treatment Substance is not set if None
+		Given iNaturalist has a new OMB observation with 'Treatment substance' set to 'None'
+		When we process the observation
+		Then the visits record has 'TreatmentSubstance' set to None
+
+
+[CORRECT OUTPUT (REFERENCE)]
+
+Feature: Processing a new iNaturalist observation populates a new WeedVisits record correctly
+
+	Rule: Optional fields are set on WeedVisits record
+
+
+* `"WeedLocations"` is the name of the layer or table (note this is either `WeedLocations` or `Weed_Visits` with the current schema)
+
+The iNaturalist observations are selected based on taxon and place (e.g. *old man's beard* in *Wellington*). Each matching iNaturalist observation creates a new Feature in CAMS, with a parent `WeedLocation` record and a child `WeedVisit` record. Updates to the iNaturalist observation may create additional `WeedVisit` records, dependent on what caused the update, for example:
+
+
+[MODEL GENERATED OUTPUT (PREDICTION)]
+
+Feature: Processing a new iNaturalist observation populates a new WeedVisits record correctly
+
+	Rule: Optional fields are set on WeedVisits record
+
+
+* `"WeedLocations"` is the name of the layer or table (note this is either `WeedLocations` or `Weed_Visits` with the current schema)
+
+The iNaturalist observations are selected based on taxon and place (e.g. *old man's beard* in *Wellington*). Each matching iNaturalist observation creates a new Feature in CAMS, with a parent `WeedLocation` record and a child `WeedVisit` record. Updates to the iNaturalist observation may create additional `WeedVisit` records, dependent on what caused the update, for example:
+
+-----------------------------------
