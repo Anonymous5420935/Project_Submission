@@ -17,8 +17,8 @@ Contains the Jupyter notebooks used to execute the experiments:
 
 ### 2. `/Dataset` 
 The datasets used for the finetuning and rag experiments:
-- `FineTuning/FeatureInputRecordOutput/prepare_Dataset.json`: The raw aligned pairs used for finetuning generating records
-- `FineTuning/RecordInputFeatureOutput/prepare_Dataset.json`: The raw aligned pairs used for finetuning generating scenario
+- `FineTuning/FeatureInputRecordOutput/prepare_Dataset.json`: The raw aligned pairs used for finetuning record generation
+- `FineTuning/RecordInputFeatureOutput/prepare_Dataset.json`: The raw aligned pairs used for finetuning scenario generation
 - `Rag/prepare_Dataset.json`:The raw aligned pairs used for Rag
 
 ### 3. `/FineTuning` 
