@@ -15,7 +15,13 @@ Contains the Jupyter notebooks used to execute the experiments:
 - **FineTuning/:** `220m.ipynb` and `770m.ipynb` for model training and inference.
 - **RAG/:** `records-rag.ipynb` and `scenarios-rag.ipynb` for retrieval-augmented generation pipelines, and `llm-judge.ipynb` for automated evaluation.
 
-### 2. `/FineTuning` 
+### 2. `/Data` 
+The datasets used for the finetuning and rag experiments:
+- `FineTuning/FeatureInputRecordOutput/prepare_Dataset.json`: The raw aligned pairs used for finetuning generating records
+- `FineTuning/RecordInputFeatureOutput/prepare_Dataset.json`: The raw aligned pairs used for finetuning generating scenario
+- `Rag/prepare_Dataset.json`:The raw aligned pairs used for Rag
+
+### 3. `/FineTuning` 
 Detailed results and data for all fine-tuning experiments, categorized by model scale (**220M** vs **770M**) and task direction.
 
 - **GeneratingRecords:** Scenario → Record transformation.
@@ -28,12 +34,11 @@ Detailed results and data for all fine-tuning experiments, categorized by model 
   - *Truncating + Chunking:* A one-to-many approach where the target output is split into continuous chunks, each paired with a truncated version of the input.
   - *Summarizing + Chunking:* A one-to-many approach where target chunks are paired with a logically complete summary of the input.
 - **Artifacts:** Each strategy folder contains
-- `prepare_Dataset.json`: The raw aligned pairs
 -  `Modified_Dataset.json:`The data after applying the specific strategy
 -  `practice_dataset_codet5p_tokenized.json:`The final processed data used for training.
 -  `validation_report.txt:`The automated metrics (EM, BLEU, F1) for that specific run.
 
-### 3. `/Prompt_FewRag` 
+### 4. `/Prompt_FewRag` 
 Results for the RAG-based prompting experiments:
 - **1-examples / 3-examples:** Comparison between 1-shot and 3-shot demonstrations.
 - **Model Folders:** Results for CodeT5+, DeepSeek, and Llama.
