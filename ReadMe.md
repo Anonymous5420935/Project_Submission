@@ -15,7 +15,7 @@ Contains the Jupyter notebooks used to execute the experiments:
 - **FineTuning/:** `220m.ipynb` and `770m.ipynb` for model training and inference.
 - **RAG/:** `records-rag.ipynb` and `scenarios-rag.ipynb` for retrieval-augmented generation pipelines, and `llm-judge.ipynb` for automated evaluation.
 
-### 2. `/Data` 
+### 2. `/Dataset` 
 The datasets used for the finetuning and rag experiments:
 - `FineTuning/FeatureInputRecordOutput/prepare_Dataset.json`: The raw aligned pairs used for finetuning generating records
 - `FineTuning/RecordInputFeatureOutput/prepare_Dataset.json`: The raw aligned pairs used for finetuning generating scenario
