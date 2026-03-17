@@ -7,7 +7,7 @@ We conduct a systematic comparison between two primary model adaptation approach
 
 ## Repository Structure
 
-The repository is organized into three main directories:
+The repository is organized into four main directories:
 
 ### 1. `/Code` 
 
