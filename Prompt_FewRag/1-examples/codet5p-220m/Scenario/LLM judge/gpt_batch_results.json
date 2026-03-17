@@ -1,0 +1,52 @@
+[
+    {
+        "sample_id": 1,
+        "score": 1,
+        "reasoning": "The generated scenario has a different name, extra tags, and is missing almost all of the expected steps and table verification. It does not match the expected content."
+    },
+    {
+        "sample_id": 2,
+        "score": 3,
+        "reasoning": "The generated text captures the main intent (checking groups list) and includes most of the table data, but it omits the step about retrieving empty content and uses a slightly different request phrasing."
+    },
+    {
+        "sample_id": 3,
+        "score": 1,
+        "reasoning": "The generated scenario references the wrong versions (#2 to #1 instead of #4 to #3) and lacks the majority of the expected steps and table checks."
+    },
+    {
+        "sample_id": 4,
+        "score": 1,
+        "reasoning": "The generated scenario uses a different endpoint, returns a 401 error, and includes unrelated JSON schema checks, none of which match the expected scenario."
+    },
+    {
+        "sample_id": 5,
+        "score": 1,
+        "reasoning": "The generated output is unrelated Java source code, completely irrelevant to the expected BDD scenario."
+    },
+    {
+        "sample_id": 6,
+        "score": 1,
+        "reasoning": "The generated scenario describes a different endpoint and error response, missing all expected steps about requesting results for an empty list of clusters."
+    },
+    {
+        "sample_id": 7,
+        "score": 1,
+        "reasoning": "The generated text is about a different endpoint (list of clusters) and does not contain any of the expected steps for updating a specific rule."
+    },
+    {
+        "sample_id": 8,
+        "score": 1,
+        "reasoning": "The generated scenario is about database message handling and has unrelated tags; it does not match the simple executable\u2011lookup scenario."
+    },
+    {
+        "sample_id": 9,
+        "score": 1,
+        "reasoning": "The generated scenario is about cleaning old records and looks for migration_info, missing all steps about inserting records, running the cleaner, and verifying orphan records."
+    },
+    {
+        "sample_id": 10,
+        "score": 1,
+        "reasoning": "The generated scenario only mentions checking for migration_info and lacks all the detailed export steps, file checks, and record counts present in the expected scenario."
+    }
+]

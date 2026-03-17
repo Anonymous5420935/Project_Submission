@@ -1,0 +1,52 @@
+[
+    {
+        "sample_id": 1,
+        "score": 1,
+        "reasoning": "The generated text describes CLI flags for the CCX Notification Writer and unrelated scenarios, whereas the expected text is a feature file for database migration tests with a specific background and a long list of migration checks. No overlap."
+    },
+    {
+        "sample_id": 2,
+        "score": 1,
+        "reasoning": "The expected content is a feature file for the Insights Results Aggregator Mock service content endpoint. The generated output is just a period and an unrelated example scenario, providing no matching information."
+    },
+    {
+        "sample_id": 3,
+        "score": 1,
+        "reasoning": "Expected is a downgrade migration feature with many bullet points. Generated output is an unrelated scenario about displaying old records, with no similarity to the expected structure or content."
+    },
+    {
+        "sample_id": 4,
+        "score": 2,
+        "reasoning": "Both texts concern the \"list of clusters\" endpoint, but the expected output is a clean BDD feature with background steps and a bullet list of test cases. The generated output is a malformed JSON\u2011like scenario with excessive schema noise and does not match the expected format or bullet list."
+    },
+    {
+        "sample_id": 5,
+        "score": 1,
+        "reasoning": "The expected feature is about the \"organizations\" endpoint, while the generated text is a scenario about clusters with a table of data. The topics and structure do not correspond."
+    },
+    {
+        "sample_id": 6,
+        "score": 1,
+        "reasoning": "Expected is a feature for results for a list of clusters with a specific background and bullet list. Generated output is an unrelated scenario about clusters with a different format, lacking the required background and bullet points."
+    },
+    {
+        "sample_id": 7,
+        "score": 1,
+        "reasoning": "The generated text is a garbled repetition of \"REST API port\" lines and does not reflect the expected feature file about cluster\u2011list results."
+    },
+    {
+        "sample_id": 8,
+        "score": 2,
+        "reasoning": "Both deal with rule\u2011related endpoints, but the expected text lists several rule\u2011ack scenarios, whereas the generated output is a single malformed scenario about disabled rules with repeated \"status\" fields, not matching the expected content."
+    },
+    {
+        "sample_id": 9,
+        "score": 2,
+        "reasoning": "The expected content is a smoke\u2011test feature for the aggregator; the generated content is a smoke\u2011test feature for a different service (CCX Notification Service). The structure (smoke tests) is similar, but the service and bullet items differ, so only partial match."
+    },
+    {
+        "sample_id": 10,
+        "score": 1,
+        "reasoning": "Expected is a concise feature about starting service behavior with three bullet points. Generated output is a nonsensical repeated failure scenario, bearing no resemblance to the expected text."
+    }
+]

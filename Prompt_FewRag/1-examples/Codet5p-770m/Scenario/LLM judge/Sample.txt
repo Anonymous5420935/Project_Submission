@@ -1,0 +1,894 @@
+Input Record1:
+
+@aggregator
+Feature: Database migration tests
+
+
+  Background: System is in default state and database exist
+    Given the system is in default state
+      And the database is named test
+      And database user is set to postgres
+      And database password is set to postgres
+      And aggregator database is in initial state
+## [`insights-results-aggregator/database_migration.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/insights-results-aggregator/database_migration.feature)
+
+* Check that default migration is set to 0
+* Check database migration from version #0 to version #1
+* Check database migration from version #0 to version #2 and back to version #1
+* Check database migration from version #0 to version #3
+* Check database migration from version #0 to version #4
+* Check database migration from version #0 to version #5
+* Check database migration from version #0 to version #6
+* Check database migration from version #0 to version #7
+* Check database migration from version #0 to version #8
+* Check database migration from version #0 to version #9
+* Check database migration from version #0 to version #10
+* Check database migration from version #0 to version #11
+* Check database migration from version #0 to version #12
+* Check database migration from version #0 to version #13
+* Check database migration from version #0 to version #14
+* Check database migration from version #0 to version #15
+* Check database migration from version #0 to version #16
+* Check database migration from version #0 to version #17
+* Check database migration from version #0 to version #18
+* Check database migration from version #0 to version #19
+* Check database migration from version #0 to version #20
+* Check database migration from version #0 to version #21
+* Check database migration from version #0 to version #22
+* Check database migration from version #0 to version #23
+* Check database migration from version #0 to version #24
+* Check database migration from version #0 to version #25
+* Check database migration from version #0 to version #26
+* Check database migration from version #0 to version #27
+* Check database migration from version #0 to version #28
+* Check database migration from version #0 to version #29
+* Check database migration from version #0 to version #30
+* Check database migration from version #0 to version #31
+
+
+Expected BDD scenario:
+
+ @database
+  Scenario: Check that default migration is set to 0
+     When database connection is established
+      And I look for the table migration_info in database
+     Then I should be able to find it
+     When I read current migration number from database
+     Then I should see that migration #0 is returned
+      And I should see 1 table in the database
+      And I should see these tables in the database
+          | Table name     |
+          | migration_info |
+
+
+Generated BDD scenario:
+
+@database @database-read
+  Scenario: Check that default migration is set to 0
+     When database connection is established
+      And I look for the table migration_info in database
+     Then I should be able to find it
+"
+}
+
+Example2:
+{
+    "Source Record": "@aggregator
+Feature: Ability to access database
+
+
+  Background: System is in default state and database exist
+    Given the system is in default state
+      And the database is named test
+      And database user is set to postgres
+      And database password is set to postgres
+
+## [`insights-results-aggregator/database_access.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/insights-results-aggregator/database_access.feature)
+
+* Check access to empty database",
+    "BDD Scenario": "@database @database-read
+  Scenario: Check access to empty database
+     When database connection is established
+      And I look for the table migration_info in database
+     Then I should be able to find it
+"
+}
+
+Example3:
+{
+    "Source Record": "@aggregator
+Feature: Database migration tests
+
+
+  Background: System is in default state and database exist
+    Given the system is in default state
+      And the database is named test
+      And database user is set to postgres
+      And database password is set to postgres
+      And aggregator database is in initial state
+## [`insights-results-aggregator/database_migration.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/insights-results-aggregator/database_migration.feature)
+
+* Check that default migration is set to 0
+* Check database migration from version #0 to version #1
+* Check database migration from version #0 to version #2 and back to version #1
+* Check database migration from version #0 to version #3
+* Check database migration from version #0 to version #4
+* Check database migration from version #0 to version #
+
+
+
+Input Record2:
+
+Feature: Checking responses from Insights Results Aggregator Mock service: "content" endpoint
+
+
+  Background:
+    Given REST API service hostname is localhost
+      And REST API service port is 8080
+      And REST API service prefix is /api/insights-results-aggregator/v2
+
+
+## [`insights-results-aggregator-mock/content_info.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/insights-results-aggregator-mock/content_info.feature)
+
+* Check if Insights Results Aggregator Mock service return correct list of groups
+
+
+Expected BDD scenario:
+
+Scenario: Check if Insights Results Aggregator Mock service return correct list of groups
+Given the system is in default state
+When I request content and groups
+Then The status code of the response is 200
+And The status message of the response is "ok"
+And I should retrieve empty content
+And I should retrieve following list of groups
+| Title                | Description                                                                                                                                               | Tags                 |
+| Fault Tolerance      | Load balancer issues, machine api and autoscaler issues, failover issues, nodes down, cluster api/cluster provider issues.                                | fault_tolerance      |
+| Performance          | High utilization, proposed tuned profiles, storage issues                                                                                                 | performance          |
+| Service Availability | Operator degraded, missing functionality due to misconfiguration or resource constraints.                                                                 | service_availability |
+| Security             | Issues related to certificates, user management, security groups, specific port usage, storage permissions, usage of kubeadmin account, exposed keys etc. | security             |
+
+
+
+Generated BDD scenario:
+
+Feature: Checking responses from Insights Results Aggregator Mock service: "groups" endpoint
+
+
+  Background:
+    Given REST API service hostname is localhost
+      And REST API service port is 8080
+      And REST API service prefix is /api/insights-results-aggregator/v2
+## [`insights-results-aggregator-mock/list_of_groups.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/insights-results-aggregator-mock/list_of_groups.feature)
+
+* Check if Insights Results Aggregator Mock service return correct list of groups",
+}
+
+Example2:
+{
+    "Source Record": "Feature: Checking responses from Insights Results Aggregator Mock service: "groups" endpoint
+
+
+  Background:
+    Given REST API service hostname is localhost
+      And REST API service port is 8080
+      And REST API service prefix is /api/insights-results-aggregator/v2
+## [`insights-results-aggregator-mock/list_of_groups.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/insights-results-aggregator-mock/list_of_groups.feature)
+
+* Check if Insights Results Aggregator Mock service return correct list of groups",
+    "BDD Scenario": "@rest-api
+  Scenario: Check if Insights Results Aggregator Mock service return correct list of groups
+    Given the system is in default state
+     When I request list of groups
+     Then The status code of the response is 200
+      And The status message of the response is "ok"
+      And I should retrieve following list of groups
+         | Title                | Description                                                                                                                                               | Tags                 |
+         | Fault Tolerance      | Load balancer issues, machine api and autoscaler issues, failover issues, nodes down, cluster api/cluster provider issues.                                | fault_tolerance      |
+         | Performance          | High utilization, proposed tuned profiles, storage issues                                                                                                 | performance          |
+         | Service Availability | Operator degraded, missing functionality due to misconfiguration or resource
+
+
+
+Input Record3:
+
+@aggregator
+Feature: Checking responses from Insights Results Aggregator service: "organizations" endpoint
+
+
+  Background:
+    Given REST API service hostname is localhost
+      And REST API service port is 8080
+      And REST API service prefix is /api/v1
+      And the database is named test
+      And database user is set to postgres
+      And database password is set to postgres
+      And aggregator database is in initial state
+     When database connection is established
+      And I migrate aggregator database to latest version
+      And I read current migration number from database
+     Then I should see that migration #31 is returned
+    Given Insights Results Aggregator service is started in background
+
+## [`insights-results-aggregator/list_of_organizations.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/insights-results-aggregator/list_of_organizations.feature)
+
+* Check if empty list of organizations is returned when report table is empty
+* Check if list with one organization is returned when report table contains one report only
+* Check if list with one organization is returned when report table contains reports for one organization only
+* Check if list with two organizations is returned when report table contains reports for two organizations
+* Check if list with two organizations is returned when report table contains multiple reports for two organizations
+
+
+Expected BDD scenario:
+
+  @rest-api @json-check
+  Scenario: Check if list with two organizations is returned when report table contains reports for two organizations
+    Given the system is in default state
+      And empty reports are stored for following clusters
+        | organization | cluster ID                           |
+        | 123          | 01234567-89ab-cdef-0123-456789abcdef |
+        | 456          | ffffffff-89ab-cdef-0123-456789abcdef |
+     When I access endpoint /organizations using HTTP GET method using token for organization 123 account number 456, and user 789
+     Then The status code of the response is 200
+      And The status message of the response is "ok"
+      And I should retrieve following list of organizations
+         | Organization |
+         | 123          |
+         | 456          |
+     When I terminate Insights Results Aggregator
+     Then Insights Results Aggregator process should terminate
+
+
+Generated BDD scenario:
+
+ Scenario: Check if the main endpoint is reachable (w/o using auth. token)
+    Given the system is in default state
+     When I access endpoint / using HTTP GET method
+     Then The status code of the response is 401
+      And The body of the response has the following schema
+          """
+          {
+            "status": {
+              "type": "string"
+            }
+          }
+          """
+          And I migrate aggregator database to latest version
+      And I read current migration number from database
+     Then I should see that migration #31 is returned
+    Given Insights Results Aggregator service is started in background
+
+## [`insights-results-aggregator/basic_rest_api`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/insights-results-aggregator/basic_rest_api.feature)
+
+* Check if the main endpoint is reachable (w/o using auth. token)
+* Check if the main endpoint is reachable (with proper auth. token)
+* Check if the info endpoint is reachable (w/o using auth. token)
+* Check if the info endpoint is reachable (with proper auth. token)
+* Check if the organizations endpoint is reachable (w/o using auth. token)
+* Check if the organizations endpoint is reachable (with proper auth. token)
+* Check if the organizations endpoint is reachable (with proper auth. token)
+* Check if the organizations endpoint is reachable (with proper auth. token)
+* Check if the organizations endpoint is reachable (with proper auth. token)
+* Check if the organizations endpoint is reachable (with proper auth. token)
+* Check if the organizations endpoint is reachable (with proper auth. token)
+* Check if the organizations endpoint is reachable (with proper auth. token)
+* Check if the organizations endpoint is reachable (with proper auth. token)
+* Check if the organizations endpoint is reachable (with proper auth. token)
+* Check if the organizations endpoint is reachable (with proper auth. token)
+* Check if the organizations endpoint is reachable (with proper auth. token)
+* Check if the organizations endpoint is reachable (with proper auth. token)
+* Check if the organizations endpoint is reachable (with proper auth. token)
+* Check
+
+
+Input Record4:
+
+Feature: Checking REST API endpoint that returns results for provided list of clusters
+
+
+  Background:
+    Given REST API service hostname is localhost
+      And REST API service port is 8080
+      And REST API service prefix is /api/v1
+      And the database is named test
+      And database user is set to postgres
+      And database password is set to postgres
+      And aggregator database is in initial state
+     When database connection is established
+      And I migrate aggregator database to latest version
+      And I read current migration number from database
+     Then I should see that migration #31 is returned
+    Given Insights Results Aggregator service is started in background
+
+## [`insights-results-aggregator/results_for_cluster_list.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/insights-results-aggregator/results_for_cluster_list.feature)
+
+* Check if Insights Results Aggregator service returns results for empty list of clusters
+* Check if Insights Results Aggregator service returns results for non empty list of clusters without proper report
+* Check if Insights Results Aggregator service returns results for non empty list of clusters with proper report
+* Check if Insights Results Aggregator service returns results for non empty list of clusters with proper report and one unknown cluster
+* Check if Insights Results Aggregator service returns results for non empty list of clusters with proper report and two unknown clusters
+* Check if Insights Results Aggregator service returns results for two unknown clusters
+
+
+Expected BDD scenario:
+
+@rest-api
+  Scenario: Check if Insights Results Aggregator service returns results for empty list of clusters
+    Given the system is in default state
+     When I request results for the following list of clusters using token for organization 123 account number 456, and user 789
+          | Cluster name                         |
+     Then The status code of the response is 200
+     Then Attribute clusters should be null
+      And Attribute errors should be null
+      And I should see empty list of reports
+     When I terminate Insights Results Aggregator
+     Then Insights Results Aggregator process should terminate
+
+
+Generated BDD scenario:
+
+Feature: Checks for cluster reports provided by Insights Results Aggregator
+
+
+  Background:
+    Given REST API service hostname is localhost
+      And REST API service port is 8080
+      And REST API service prefix is /api/v1
+      And the database is named test
+      And database user is set to postgres
+      And database password is set to postgres
+      And aggregator database is in initial state
+     When database connection is established
+      And I migrate aggregator database to latest version
+      And I read current migration number from database
+     Then I should see that migration #31 is returned
+    Given Insights Results Aggregator service is started in background
+
+## [`insights-results-aggregator/cluster_reports.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/insights-results-aggregator/cluster_reports.feature)
+
+* Check if the cluster report endpoint is reachable (w/o using auth. token)
+* Check if the cluster report endpoint is reachable (w/o using auth. token) for different organization
+* Check if the cluster report endpoint is reachable for correct cluster ID (with using auth. token)
+* Check if the cluster report endpoint is reachable for correct cluster ID (with using auth. token) and different organization
+* Check if the cluster report endpoint is reachable for two correct cluster IDs (with using auth. token)
+* Check if the cluster report endpoint is reachable for two correct cluster IDs (with using auth. token)"
+}
+
+Example2:
+{
+    "Source Record": "Feature: Checks for cluster reports provided by Insights Results Aggregator
+
+
+  Background:
+    Given REST API service hostname is localhost
+      And REST API service port is 8080
+      And REST API service prefix is /api/v1
+      And the database is named test
+      And database user is set to postgres
+      And database password is set to postgres
+      And aggregator database is in initial state
+     When database connection is established
+      And I migrate aggregator database to latest version
+      And I read current migration number from database
+     Then I should see that migration #31 is returned
+    Given Insights
+
+
+Input Record5:
+
+Feature: Checking REST API endpoint that returns results for provided list of clusters
+
+
+  Background:
+    Given REST API service hostname is localhost
+      And REST API service port is 8080
+      And REST API service prefix is /api/v1
+      And the database is named test
+      And database user is set to postgres
+      And database password is set to postgres
+      And aggregator database is in initial state
+     When database connection is established
+      And I migrate aggregator database to latest version
+      And I read current migration number from database
+     Then I should see that migration #31 is returned
+    Given Insights Results Aggregator service is started in background
+
+## [`insights-results-aggregator/results_for_cluster_list.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/insights-results-aggregator/results_for_cluster_list.feature)
+
+* Check if Insights Results Aggregator service returns results for empty list of clusters
+* Check if Insights Results Aggregator service returns results for non empty list of clusters without proper report
+* Check if Insights Results Aggregator service returns results for non empty list of clusters with proper report
+* Check if Insights Results Aggregator service returns results for non empty list of clusters with proper report and one unknown cluster
+* Check if Insights Results Aggregator service returns results for non empty list of clusters with proper report and two unknown clusters
+* Check if Insights Results Aggregator service returns results for two unknown clusters
+
+
+Expected BDD scenario:
+
+ @rest-api
+  Scenario: Check if Insights Results Aggregator service returns results for non empty list of clusters with proper report
+    Given the system is in default state
+      And non empty reports are stored for following clusters
+         | organization | cluster ID                           |
+         | 123          | 01234567-89ab-cdef-0123-456789abcdef |
+         | 123          | aaaaaaaa-89ab-cdef-0123-456789abcdef |
+         | 123          | bbbbbbbb-89ab-cdef-0123-456789abcdef |
+     When I request results for the following list of clusters using token for organization 123 account number 456, and user 789
+         | Cluster name                         |
+         | 01234567-89ab-cdef-0123-456789abcdef |
+         | aaaaaaaa-89ab-cdef-0123-456789abcdef |
+         | bbbbbbbb-89ab-cdef-0123-456789abcdef |
+     Then The status code of the response is 200
+      And Attribute errors should be null
+      And I should retrieve following list of clusters
+         | Cluster name                         |
+         | 01234567-89ab-cdef-0123-456789abcdef |
+         | aaaaaaaa-89ab-cdef-0123-456789abcdef |
+         | bbbbbbbb-89ab-cdef-0123-456789abcdef |
+      And I should see attribute named reports in response
+      And I should see report for following list of clusters
+         | Cluster name                         |
+         | 01234567-89ab-cdef-0123-456789abcdef |
+         | aaaaaaaa-89ab-cdef-0123-456789abcdef |
+         | bbbbbbbb-89ab-cdef-0123-456789abcdef |
+     When I terminate Insights Results Aggregator
+     Then Insights Results Aggregator process should terminate
+
+
+Generated BDD scenario:
+
+Feature: Checks for cluster reports provided by Insights Results Aggregator
+
+
+  Background:
+    Given REST API service hostname is localhost
+      And REST API service port is 8080
+      And REST API service prefix is /api/v1
+      And the database is named test
+      And database user is set to postgres
+      And database password is set to postgres
+      And aggregator database is in initial state
+     When database connection is established
+      And I migrate aggregator database to latest version
+      And I read current migration number from database
+     Then I should see that migration #31 is returned
+    Given Insights Results Aggregator service is started in background
+
+## [`insights-results-aggregator/cluster_reports.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/insights-results-aggregator/cluster_reports.feature)
+
+* Check if the cluster report endpoint is reachable (w/o using auth. token)
+* Check if the cluster report endpoint is reachable (w/o using auth. token) for different organization
+* Check if the cluster report endpoint is reachable for correct cluster ID (with using auth. token)
+* Check if the cluster report endpoint is reachable for correct cluster ID (with using auth. token) and different organization
+* Check if the cluster report endpoint is reachable for two correct cluster IDs (with using auth. token)
+* Check if the cluster report endpoint is reachable for two correct cluster IDs (with using auth. token)"
+}
+
+Example2:
+{
+    "Source Record": "Feature: Checks for cluster reports provided by Insights Results Aggregator
+
+
+  Background:
+    Given REST API service hostname is localhost
+      And REST API service port is 8080
+      And REST API service prefix is /api/v1
+      And the database is named test
+      And database user is set to postgres
+      And database password is set to postgres
+      And aggregator database is in initial state
+     When database connection is established
+      And I migrate aggregator database to latest version
+      And I read current migration number from database
+     Then I should see that migration #31 is returned
+    Given Insights
+
+Input Record6:
+
+Feature: Reading acked rules, acking new rule and acking existing rule
+
+
+  Background:
+    Given REST API service hostname is localhost
+      And REST API service port is 8080
+      And REST API service prefix is /api/v1
+      And the database is named test
+      And database user is set to postgres
+      And database password is set to postgres
+      And aggregator database is in initial state
+     When database connection is established
+      And I migrate aggregator database to latest version
+      And I read current migration number from database
+     Then I should see that migration #31 is returned
+    Given Insights Results Aggregator service is started in background
+
+## [`insights-results-aggregator/rule_ack.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/insights-results-aggregator/rule_ack.feature)
+
+* Check if Insights Results Aggregator service returns list of acked rules
+* Check if Insights Results Aggregator service is able to disable one specific rule
+* Check if Insights Results Aggregator service is able to disable two specific rules
+* Check if Insights Results Aggregator service is able to enable already disabled one specific rule
+* Check if Insights Results Aggregator service is able to enable one already disabled specific rule from two rules
+* Check if Insights Results Aggregator service is able to update one specific rule
+* Check if Insights Results Aggregator service is able to update non disabled specific rule
+* Check if Insights Results Aggregator service is able to update one specific rule two times
+
+
+Expected BDD scenario:
+
+ @rest-api
+  Scenario: Check if Insights Results Aggregator service is able to disable one specific rule
+    Given the system is in default state
+     When I ask for list of all disabled rules for organization 123 account number 456, and user 789
+     Then The status code of the response is 200
+      And The status message of the response is "ok"
+      And I should get empty list of disabled rules
+     When I disable rule foo with error key bar for organization 123 account number 456, and user 789 with justification 'anything'
+     Then The status code of the response is 200
+      And The status message of the response is "ok"
+     When I ask for list of all disabled rules for organization 123 account number 456, and user 789
+     Then The status code of the response is 200
+      And The status message of the response is "ok"
+      And I should get one disabled rule
+      And List of returned rules should contain following rules
+          | Org ID | Rule ID | Error key | Justification |
+          | 123    | foo     | bar       | anything      |
+     When I terminate Insights Results Aggregator
+     Then Insights Results Aggregator process should terminate
+
+
+Generated BDD scenario:
+
+ Scenario: Check if the main endpoint is reachable (w/o using auth. token)
+    Given the system is in default state
+     When I access endpoint / using HTTP GET method
+     Then The status code of the response is 401
+      And The body of the response has the following schema
+          """
+          {
+            "status": {
+              "type": "string"
+            }
+          }
+          """
+      And I migrate aggregator database to latest version
+      And I read current migration number from database
+     Then I should see that migration #31 is returned
+    Given Insights Results Aggregator service is started in background
+
+## [`insights-results-aggregator/basic_rest_api`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/insights-results-aggregator/basic_rest_api.feature)
+
+* Check if the main endpoint is reachable (w/o using auth. token)
+* Check if the main endpoint is reachable (with proper auth. token)
+* Check if the info endpoint is reachable (w/o using auth. token)
+* Check if the info endpoint is reachable (with proper auth. token)
+* Check if the organizations endpoint is reachable (w/o using auth. token)
+* Check if the organizations endpoint is reachable (with proper auth. token)
+* Check if the organizations endpoint is reachable (with proper auth. token)
+* Check if the organizations endpoint is reachable (with proper auth. token)
+* Check if the organizations endpoint is reachable (with proper auth. token)
+* Check if the organizations endpoint is reachable (with proper auth. token)
+* Check if the organizations endpoint is reachable (with proper auth. token)
+* Check if the organizations endpoint is reachable (with proper auth. token)
+* Check if the organizations endpoint is reachable (with proper auth. token)
+* Check if the organizations endpoint is reachable (with proper auth. token)
+* Check if the organizations endpoint is reachable (with proper auth. token)
+* Check if the organizations endpoint is reachable (with proper auth. token)
+* Check if the organizations endpoint is reachable (with proper auth. token)
+* Check if the organizations endpoint is reachable (with proper auth. token)
+* Check
+
+Input Record7:
+
+@aggregator
+Feature: Basic set of smoke tests
+
+## [`insights-results-aggregator/smoketests.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/insights-results-aggregator/smoketests.feature)
+
+* Check if Insights Results Aggregator application is available
+* Check if Insights Results Aggregator displays help message
+* Check if Insights Results Aggregator displays help message
+* Check if Insights Results Aggregator displays version info
+* Check if Insights Results Aggregator displays actual configuration
+* Check if jps utility is available
+* Check if ZooKeeper is running locally
+* Check if Kafka broker is running locally
+* Check if Kafka broker is running on expected port
+
+
+
+Expected BDD scenario:
+
+ Scenario: Check if Insights Results Aggregator application is available
+    Given the system is in default state
+     When I look for executable file insights-results-aggregator
+     Then I should find that file on PATH
+
+
+Generated BDD scenario:
+
+  @cli
+  Scenario: Check if Insights Results Aggregator displays actual configuration
+    Given the system is in default state
+     When I run the Insights Results Aggregator with the --config command line flag
+     Then I should see actual configuration displayed by Insights Results Aggregator Mock standard output
+"
+}
+
+Example2:
+{
+    "Source Record": "Feature: Basic set of smoke tests
+
+## [`insights-results-aggregator/smoketests.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/insights-results-aggregator/smoketests.feature)
+
+* Check if Insights Results Aggregator application is available
+* Check if Insights Results Aggregator displays help message
+* Check if Insights Results Aggregator displays help message
+* Check if Insights Results Aggregator displays version info
+* Check if Insights Results Aggregator displays authors
+* Check if Insights Results Aggregator displays actual configuration
+* Check if jps utility is available
+* Check if ZooKeeper is running locally
+* Check if Kafka broker is running locally
+* Check if Kafka broker is running on expected port
+",
+    "BDD Scenario":  @cli
+  Scenario: Check if Insights Results Aggregator displays actual configuration
+    Given the system is in default state
+     When I run the Insights Results Aggregator with the --config command line flag
+     Then I should see actual configuration displayed by Insights Results Aggregator Mock standard output
+"
+}
+
+Example3:
+{
+    "Source Record": "Feature: Basic set of smoke tests
+
+## [`insights-results-aggregator/smoketests.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/insights-results-aggregator/smoketests.feature)
+
+* Check if Insights Results Aggregator application is available
+* Check if Insights Results Aggregator displays help message
+* Check if Insights Results Aggregator displays help message
+* Check if Insights Results Aggregator displays version info
+* Check if Insights Results Aggregator displays authors
+
+Input Record8:
+
+@aggregator
+Feature: Checking Aggregator behaviour during starting the service
+
+
+## [`insights-results-aggregator/starting_service.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/insights-results-aggregator/starting_service.feature)
+
+* Check how Insights Results Aggregator reacts to non existent configuration file
+* Check how Insights Results Aggregator reacts to broken database configuration
+* Check how Insights Results Aggregator reacts to situation when Kafka is not reachable
+
+
+
+
+Expected BDD scenario:
+
+  @cli
+  Scenario: Check how Insights Results Aggregator reacts to non existent configuration file
+    Given the system is in default state
+     When I run the Insights Results Aggregator with the start-service command line flag and config file name set to ./it-does-not-exis.toml
+     Then The process should finish with exit code 2
+      And I should see following message in service output: "panic: fatal error config file: Config File "it-does-not-exis" Not Found in"
+
+
+
+Generated BDD scenario:
+
+ @managed
+  Scenario: Check if Insights Results Aggregator is able to consume messages and store results into database
+     When I access endpoint /organizations/123/clusters using HTTP GET method using token for organization 123 account number 456, and user 789
+     Then The status code of the response is 200
+      And The status message of the response is "ok"
+      And I should retrieve empty list of clusters
+     When I send rules results 'tutorial_only.json' into topic 'ccx.ocp.results'
+      And I wait 5 seconds
+     When I access endpoint /organizations/123/clusters using HTTP GET method using token for organization 123 account number 456, and user 789
+     Then The status code of the response is 200
+      And The status message of the response is "ok"
+      And I should retrieve following list of clusters
+        | Cluster name                         |
+        | 01234567-89ab-cdef-0123-456789abcdef |
+     When I terminate Insights Results Aggregator
+     Then Insights Results Aggregator process should terminate"
+}
+
+Example2:
+{
+    "Source Record": "@aggregator
+Feature: Consuming and processing results from Kafka broker
+
+
+  Background:
+    Given REST API service hostname is localhost
+      And REST API service port is 8080
+      And REST API service prefix is /api/v1
+      And the database is named test
+      And database user is set to postgres
+      And database password is set to postgres
+      And aggregator database is in initial state
+      And Kafka broker is available
+      And Kafka topic "ccx.ocp.results" is empty
+     When database connection is established
+      And I migrate aggregator database to latest version
+      And I read current migration number from database
+     Then I should see that migration #31 is returned
+    Given Insights Results Aggregator service is started in background
+     When I wait 5 seconds
+## [`insights-results-aggregator/consumer.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/insights-results-aggregator/consumer.feature)
+
+*
+
+Input Record9:
+
+@aggregator_cleaner
+Feature: Ability to delete old records from database
+
+  Background:
+    Given the system is in default state
+      And the database is named test
+      And database user is set to postgres
+      And database password is set to postgres
+      And database connection is established
+## [`insights-results-aggregator-cleaner/cleanup_all.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/insights-results-aggregator-cleaner/cleanup_all.feature)
+
+* Clean up old records
+* Clean up orphan records
+* Clean up only orphan records
+* Clean up old records with dry-run
+
+
+Expected BDD scenario:
+
+ @database @database-write
+  Scenario: Clean up only orphan records
+    Given the database is empty
+     When I prepare database schema
+     Then I should find that all tables are empty
+     When I insert following records into REPORT table
+          | org_id | cluster                              | report | reported_at | last_checked_at |
+          | 1      | 00000000-0000-0000-0000-000000000000 |        | 2024-01-01  |  2024-01-01     |
+      And I insert following records into RULE_HIT table
+          | org_id | cluster_id                           | rule_fqdn | error_key | template_data |
+          | 1      | 00000000-0000-0000-0000-000000000000 | fqdn1     | ek1       |  template1    |
+          | 2      | 11111111-1111-1111-1111-111111111111 | fqdn2     | ek2       |  template2    |
+      And I run the cleaner without dry-run to cleanup all records older than 50 years
+     Then I should see the following clusters
+          | cluster                              |
+          | 11111111-1111-1111-1111-111111111111 |
+      And I should see the following rule_hit
+          | org_id | cluster_id                           | rule_fqdn | error_key | template_data |
+          | 1      | 00000000-0000-0000-0000-000000000000 | fqdn1     | ek1       |  template1    |
+     When I delete all tables from database
+     Then I should find that the database is empty
+
+
+Generated BDD scenario:
+
+When I insert following row into table new_reports
+          | org id |  account number | cluster name                         | updated at  | kafka offset |
+          | 1      |  10             | 5d5892d4-1f74-4ccf-91af-548dfc9767aa | 1990-01-01  | 1            |
+      And I select all rows from table new_reports
+     Then I should get 1 row
+     When I start the CCX Notification Service with the --new-reports-cleanup command line flag
+     Then I process should exit with status code set to 0
+     When I select all rows from table new_reports
+     Then I should get 0 rows"
+}
+
+Example2:
+{
+    "Source Record": "@notification_service
+Feature: Ability to clean up records stored in database
+
+
+  Background: Dependencies are prepared
+    Given the system is in default state
+      And the database is named notification
+      And database user is set to postgres
+      And database password is set to postgres
+      And database connection is established
+      And CCX Notification database is set up
+
+## [`ccx-notification-service/cleanup_records.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/ccx-notification-service/cleanup_records.feature)
+
+* Check the ability to clean up old records from `new_reports` table if the table is empty.
+* Check the ability to clean up old records from `reported` if the table is empty.
+* Check the ability to clean up old records from `new_reports` if the table contains one old report.
+* Check the ability to clean up old records from `reported` table if the table contains multiple old reports.
+* Check the ability to clean up old records from `new_reports` table if the table contains one old report.
+* Check the ability to clean up old records from `reported` table if the table contains two old reports.
+* Check that newest records in `new_reports` table are not deleted by cleanup - one new record only.
+* Check that newest records in `new_reports` table are not deleted by
+
+Input Record10:
+
+@aggregator_cleaner
+Feature: Ability to display old records found in the database
+
+
+  Background:
+    Given the system is in default state
+      And the database is named test
+      And database user is set to postgres
+      And database password is set to postgres
+      And database connection is established
+## [`insights-results-aggregator-cleaner/display_old_records.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/insights-results-aggregator-cleaner/display_old_records.feature)
+
+* Read old records from empty database
+* Read old records from empty database giving different time period
+* Read old records from prepared non-empty database with new records only
+* Read old records from prepared non-empty database with old records only
+* Read old records from prepared non-empty database with mixed records
+
+
+Expected BDD scenario:
+
+
+  @database @database-read
+  Scenario: Read old records from empty database giving different time period
+    Given the database is empty
+     When I prepare database schema
+     Then I should find that all tables are empty
+     When I run the cleaner to display all records older than 10 days
+     Then I should see empty list of records
+     When I delete all tables from database
+     Then I should find that the database is empty
+
+
+Generated BDD scenario:
+
+@database @database-read @database-write
+  Scenario: Read old records from empty database
+     When database connection is established
+      And I look for the table migration_info in database
+     Then I should be able to find it
+"
+}
+
+Example2:
+{
+    "Source Record": "@aggregator_cleaner_cleaner
+Feature: Ability to display old records found in the database
+
+
+  Background:
+    Given the system is in default state
+      And the database is named test
+      And database user is set to postgres
+      And database password is set to postgres
+      And database connection is established
+## [`insights-results-aggregator-cleaner-cleaner/display_old_records_cleaner.feature`](https://github.com/RedHatInsights/insights-behavioral-spec/blob/main/features/insights-results-aggregator-cleaner-cleaner/display_old_records_cleaner.feature)
+
+* Read old records from empty database
+* Read old records from empty database giving different time period
+* Read old records from prepared non-empty database with new records only
+* Read old records from prepared non-empty database with old records only
+* Read old records from prepared non-empty database with mixed records",
+    "BDD Scenario":  "@database @database-read @database-write
+  Scenario: Read old records from empty database
+     When database connection is established
+      And I look for the table migration_info in database
+     Then I should be able to find it
+"
+}
+
+Example3:
+{
+    "Source Record": "@aggregator_cleaner_cleaner_cleaner
+Feature: Ability to display old records found in the database
+
+
+  Background:
+    Given the system is in default state
+      And the database is named test
+      And database user is set to postgres
+      And database password is set to postgres
+      And database connection is established
+## [`insights-results-aggregator-cleaner-cleaner/display_old_records_cleaner.feature`](https://github.com/RedHatInsights/
+

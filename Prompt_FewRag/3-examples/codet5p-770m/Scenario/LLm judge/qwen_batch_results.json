@@ -1,0 +1,52 @@
+[
+    {
+        "sample_id": 1,
+        "score": 1,
+        "reasoning": "Generated text is just a period, completely missing all content and structure from the expected scenario about database migration checks."
+    },
+    {
+        "sample_id": 2,
+        "score": 2,
+        "reasoning": "Generated text contains JSON schema fragments but fails to match the expected scenario structure, missing key elements like the groups table and status code checks."
+    },
+    {
+        "sample_id": 3,
+        "score": 1,
+        "reasoning": "Generated text is a long list of irrelevant tags and doesn't address the database downgrade scenario or any of the expected steps."
+    },
+    {
+        "sample_id": 4,
+        "score": 2,
+        "reasoning": "Generated text contains repeated migration checks but completely misses the expected scenario about organizations endpoint and cluster reports."
+    },
+    {
+        "sample_id": 5,
+        "score": 2,
+        "reasoning": "Generated text includes JSON schema but fails to match the expected scenario about empty cluster results and proper response attributes."
+    },
+    {
+        "sample_id": 6,
+        "score": 2,
+        "reasoning": "Generated text contains excessive repetition of 'two reports' phrases and fails to match the expected scenario about disabled rules and empty response."
+    },
+    {
+        "sample_id": 7,
+        "score": 2,
+        "reasoning": "Generated text checks for authors command instead of the expected executable file check, missing the primary intent of the scenario."
+    },
+    {
+        "sample_id": 8,
+        "score": 1,
+        "reasoning": "Generated text contains only background setup with repeated database broker steps, completely missing the expected scenario about configuration file handling."
+    },
+    {
+        "sample_id": 9,
+        "score": 2,
+        "reasoning": "Generated text contains repeated 'check ability' phrases without proper scenario structure or matching the expected database cleanup steps."
+    },
+    {
+        "sample_id": 10,
+        "score": 2,
+        "reasoning": "Generated text inserts data and checks for rows, contradicting the expected scenario about reading from an empty database and displaying no records."
+    }
+]

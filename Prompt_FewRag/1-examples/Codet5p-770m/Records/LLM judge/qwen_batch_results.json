@@ -1,0 +1,52 @@
+[
+    {
+        "sample_id": 1,
+        "score": 1,
+        "reasoning": "The generated text completely misses the database migration tests and only covers a basic access check. The structure and content are significantly different from the expected output."
+    },
+    {
+        "sample_id": 2,
+        "score": 3,
+        "reasoning": "The generated text captures the structure and intent but changes the endpoint from 'content' to 'groups'. The test case is similar but not identical, with minor stylistic differences."
+    },
+    {
+        "sample_id": 3,
+        "score": 1,
+        "reasoning": "The generated text is about a different feature (displaying old records vs. downgrades) and the structure is different. The content is not aligned with the expected migration downgrade tests."
+    },
+    {
+        "sample_id": 4,
+        "score": 2,
+        "reasoning": "The generated text changes the focus from the 'organizations' endpoint to general REST API endpoints. The structure is similar but the content is different, missing the specific test cases for organizations."
+    },
+    {
+        "sample_id": 5,
+        "score": 1,
+        "reasoning": "The generated text is about a different feature (basic endpoints vs. cluster list). The structure is similar but the content is not aligned with the expected cluster list tests."
+    },
+    {
+        "sample_id": 6,
+        "score": 1,
+        "reasoning": "The generated text is about a different feature (rule ack vs. basic endpoints). The structure is similar but the content is not aligned with the expected rule acknowledgment tests."
+    },
+    {
+        "sample_id": 7,
+        "score": 2,
+        "reasoning": "The generated text is about a different service (CCX Notification Writer vs. Insights Results Aggregator) but shares a similar structure. Some checks are similar, but others are different (e.g., kcat utility instead of help message)."
+    },
+    {
+        "sample_id": 8,
+        "score": 2,
+        "reasoning": "Same as Sample 7. The generated text is about a different service with similar structure but different content, missing key checks like help message and version info."
+    },
+    {
+        "sample_id": 9,
+        "score": 2,
+        "reasoning": "The generated text is about a different database (notification vs. test) and has different test cases. The structure is similar but the content is not aligned with the expected cleanup tests."
+    },
+    {
+        "sample_id": 10,
+        "score": 2,
+        "reasoning": "The generated text is about a different database and has repetitive, less relevant test cases. The structure is similar but the content is not aligned with the expected display old records tests."
+    }
+]
