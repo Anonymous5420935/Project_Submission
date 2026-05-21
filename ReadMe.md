@@ -44,6 +44,11 @@ Results for the RAG-based prompting experiments:
 - **Model Folders:** Results for CodeT5+, DeepSeek, and Llama.
 - **Evaluation Artifacts:** Includes `final_evaluation_report.txt` and a dedicated LLM judge folder containing JSON-formatted reasoning and scores.
 
+### 5. `/Abalations`
+Results for Results for the RAG-based prompting experiments with applied abalations
+- **1-examples / 3-examples:** Comparison between 1-shot and 3-shot demonstrations.
+- **Model Folders:** Results for CodeT5-220m.
+- **Evaluation Artifacts:** Includes `final_evaluation_report.txt` containing the automated metrics metrics (EM, BLEU, F1) and retrieval quality score.
 ## Experimental variables
 This study evaluates the impact of three primary variables on generation quality:
 - **Task Direction:** Bidirectional mapping (Record ↔ Scenario).
